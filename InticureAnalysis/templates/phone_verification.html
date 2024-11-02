@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- content @s -->
+<div class="nk-content nk-content-lg nk-content-fluid ">
+    <div class="container-xl wide-lg">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="kyc-app wide-sm m-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-xs mx-auto">
+                        <div class="nk-block-head-content text-center">
+                            <h2 class="nk-block-title fw-normal">OTP Sent</h2>
+                            <div class="nk-block-des">
+                                <p>We have sent an otp to your phone number</p>
+                                {#<p>Please click the link to verify and create your account</p>#}
+                            </div>
+                        </div>
+                    </div><!-- .nk-block-head -->
+                   
+                    <div class="nk-block">                        
+                        {#<div class="card card-bordered">#}
+                            {#<div class="card-inner card-inner-lg">#}
+                                <div class="nk-kyc-app p-sm-2 text-center">
+                                    <div class="nk-kyc-app-icon">
+                                        <em class="icon ni ni-call"></em>
+                                    </div>
+                                    <form action="" method="POST">
+                                        <input type="hidden" id="form_type" name="form_type" value="next">
+                                    <div class="nk-kyc-app-text mx-auto">
+                                        {#<p class="lead">question 1</p>#}
+                                        <div class="form-group">
+                                            <label class="form-label" for="otp">Enter OTP</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" id="otp" name="otp" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="g" >
+                                        <div class="custom-control custom-control-sm custom-checkbox" style="">
+                                            <input type="checkbox" class="custom-control-input" id="agree_terms" name="agree_terms" required>
+                                            <label class="custom-control-label" for="agree_terms">
+                                                I agree to the 
+                                                <a href="https://www.inticure.com">Terms & Conditions</a>,
+                                                <a href="https://www.inticure.com">Privacy Policy</a> and
+                                                <a href="https://www.inticure.com">Telehealth consent</a>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="nk-kyc-app-action">
+                                        <a href="html/invest/kyc-form.html" class="btn btn-lg btn-primary">Continue</a>
+                                    </div> -->
+                                </div>
+                            {#</div>#}
+                        {#</div><!-- .card -->#}
+                        <div class="text-center pt-4">
+                            {#<p>If you have any question, please contact our support team <a href="mailto:info@inticure.com">info@inticure.com</a></p>#}
+                            {#<a href="{{url_for('enter_otp')}}" class="btn btn-lg btn-round btn-dark" >Continue</a>#}
+                            <button type="submit" class="btn btn-lg btn-round btn-dark" style="background-color:#6A1B78 ;">Next</button>
+                        </form>
+                        <!-- <form action="" method="POST">
+                            <input type="hidden" id="form_type" name="form_type" value="resend"> -->
+                        
+                                {#<button class="btn btn-lg btn-round " style="color:#34013f">Resend</button>#}
+                            <!-- </form> -->
+                        </div>
+                    
+                    
+                        
+                        <!-- <div class="nk-kyc-app-action">
+                            <a href="{{url_for('email_verification_message')}}" class="btn btn-lg btn-dark">Continue</a>
+                        </div> -->
+                   
+                        {#
+                        <div class="text-center pt-4">
+                            <p>If you have any question, please contact our support team <a href="mailto:info@inticure.com">info@inticure.com</a></p>
+                        </div>
+                        #}
+                    </div> <!-- .nk-block -->
+                
+                </div><!-- .kyc-app -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- content @e -->
+{% endblock %}

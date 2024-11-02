@@ -1,0 +1,210 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- content @s -->
+<div class="nk-content nk-content-lg nk-content-fluid ">
+    <div class="container-xl wide-lg">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="kyc-app wide-sm m-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-xs mx-auto">
+                        <div class="nk-block-head-content text-center">
+                            {#<h2 class="nk-block-title fw-normal" font-family="SofSofiaProWeb, Arial, Helvetica, sans-serif;">Please Enter Your Phone Number</h2>#}
+                            <div class="nk-block-des">
+                                {#<p>Please enter your phone number to continue</p>#}
+                                <!-- <p>You will receive a one time password (OTP) in this number</p> -->
+                            </div>
+                        </div>
+                    </div><!-- .nk-block-head -->
+                    <div class="nk-block">
+                        {#<div class="card card-bordered">#}
+                            {#<div class="card-inner card-inner-lg">#}
+                                <form action="" method="POST">
+                                <div class="nk-kyc-app p-sm-2 " style="margin-left:100px;margin-right:100px;">
+                                    {#
+                                    <div class="nk-kyc-app-icon">
+                                        <em class="icon ni ni-emails"></em>
+                                    </div>
+                                    #}
+
+                                    
+                                    <div class="nk-kyc-app-text mx-auto">
+                                        <p class="lead">What is your gender?</p>
+                                        {# 
+                                        <!-- <label class="purple_radio">One
+                                            <input type="radio" checked="checked" name="radio">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                          <label class="purple_radio">Two
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                          </label> -->
+                                          #}
+                                        <div class="g">
+                                            <div class="custom-control custom-radio" >
+                                                <input type="radio" class="custom-control-input" style="color: #34013f;" name="gender" id="male" value="male">
+                                                <label class="custom-control-label lead" for="male">Male</label>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="g">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="gender" id="female" value="female">
+                                                <label class="custom-control-label lead" for="female">Female</label>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="g">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input" name="gender" id="other" value="other">
+                                                <label class="custom-control-label lead" for="other">Other</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" ></label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" id="other_gender" name="other_gender">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <p class="lead" style="margin-bottom: 1px;">What is your date of birth?</p>
+                                        <div class="form-group" style="margin-top: 1px;">
+                                            <label class="form-label"></label>
+                                            <div class="form-control-wrap">
+                                                {#<div class="form-icon form-icon-left">#}
+                                                    {#<em class="icon ni ni-calendar"></em>#}
+                                                {#</div>#}
+                                                <input type="date" class="form-control " id="dob" name="dob" data-date-format="yyyy-mm-dd"  {#onchange="followupDoctorList('date')"#} required>
+                                            </div>
+                                            <!-- <div class="form-note">Date format <code>yyyy-mm-dd</code></div> -->
+                                        </div>
+                                        <!-- <ul class="list-inline" style="margin-top: 2px; margin-bottom: 10px;">
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="edit_morning_" name="edit_medicine_time_" value="morning">
+                                                    <label class="custom-control-label" for="edit_morning_">Morning</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="edit_afternoon_" name="edit_medicine_time_" value="afternoon">
+                                                    <label class="custom-control-label" for="edit_afternoon_">Afternoon</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="edit_night_" name="edit_medicine_time_" value="night">
+                                                    <label class="custom-control-label" for="edit_night_">Night</label>
+                                                </div>
+                                            </li>
+                                            
+                                        </ul> -->
+
+                                        <!-- {#<p class="lead">question 1</p>#}
+                                        <div class="form-group">
+                                            <label class="form-label" for="phone">Enter Your Phone Number</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" id="phone" name="phone">
+                                            </div>
+                                        </div>
+                                        {#<p>OR</p>#}
+                                        {#<p>Use <a href="{{url_for('email_signup')}}">Email</a> to sign up</p>#} -->
+                                    </div>
+                                    
+                                    <div class="nk-kyc-app-action text-center">
+                                        <button type="submit" class="btn btn-lg btn-round" style="background-color:#6A1B78 ; color:white">Continue</button>
+                                        {#<a type="button" href="{{url_for('phone_verification_message')}}" class="btn btn-lg btn-dark">Continue</a>#}
+                                    </div>
+                                    
+                                
+                                </div>
+                            </form>
+                            {#</div>#}
+                        {#</div><!-- .card -->#}
+                        {#
+                        <div class="text-center pt-4">
+                            <p>If you have any question, please contact our support team <a href="mailto:info@inticure.com">info@inticure.com</a></p>
+                        </div>
+                        #}
+                    </div> <!-- .nk-block -->
+                </div><!-- .kyc-app -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- content @e -->
+<!-- <style>
+    .custom-radio input:checked ~ .checkmark {
+      background-color: #34013f;
+    }
+    .input[type="radio"]:checked ~ .checkmark {
+      background-color: #34013f;
+    }
+</style> -->
+<style>
+    /* The container */
+    .purple_radio {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* Hide the browser's default radio button */
+    .purple_radio input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .purple_radio:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+    
+    /* When the radio button is checked, add a blue background */
+    .purple_radio input:checked ~ .checkmark {
+      background-color: #34013f;
+    }
+    
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    /* Show the indicator (dot/circle) when checked */
+    .purple_radio input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    /* Style the indicator (dot/circle) */
+    .purple_radio .checkmark:after {
+         top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+    </style>
+{% endblock %}

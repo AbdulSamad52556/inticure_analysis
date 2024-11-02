@@ -1,0 +1,37 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment files
+.env
+*.env
+
+# macOS system files
+.DS_Store
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Ignore any large dependency directories like `node_modules`
+node_modules/
+
+# Flask cache and session files
+*.sqlite3
+
+# Log files
+*.log
+
+# Docker files (if not necessary in source control)
+docker-compose.yml
+.dockerignore
+
+# Ignore Editor and IDE settings (optional)
+.vscode/
+.idea/
+
+# Ignore generated static/media files if applicable
+static/
+media/

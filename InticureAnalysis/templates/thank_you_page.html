@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- content @s -->
+<!-- * SWEET ALERT * -->
+    <!-- Begin alerts -->                
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <script>
+       
+    Swal.fire({
+    
+           title:"{{ category.title() }}!",
+           // success , error , warning ,info
+    
+           text: "{{ message }}",
+           // Custom message flashed from your flask routes
+    
+           icon: "{{ category }}"
+           // success , error , warning ,info
+    
+    })
+    
+    </script>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    <!-- End alerts -->
+<div class="nk-content nk-content-lg nk-content-fluid ">
+    <div class="container-xl wide-lg">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="kyc-app wide-sm m-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-xs mx-auto">
+                        <div class="nk-block-head-content text-center">
+                            {#<h2 class="nk-block-title fw-normal" font-family="SofSofiaProWeb, Arial, Helvetica, sans-serif;">Please Enter Your Phone Number</h2>#}
+                            <div class="nk-block-des">
+                                {#<p>Please enter your phone number to continue</p>#}
+                                <!-- <p>You will receive a one time password (OTP) in this number</p> -->
+                            </div>
+                        </div>
+                    </div><!-- .nk-block-head -->
+                    <div class="nk-block">
+                        {#<div class="card card-bordered">#}
+                            {#<div class="card-inner card-inner-lg">#}
+                                <form action="" method="POST">
+                                    <div class="d-none d-md-block">
+                                <div class="nk-kyc-app p-sm-2 " style="margin-left:100px;margin-right:100px;">
+                                    {#
+                                    <div class="nk-kyc-app-icon">
+                                        <em class="icon ni ni-emails"></em>
+                                    </div>
+                                    #}
+
+                                    <div class="nk-block-head-content text-center" style="font-family:Manrope; font-weight: 500; font-size: 16px;line-height: 30px; ">
+                                        <img src="{{url_for('static',filename='images/party-popper.png')}}" width="50" height="50" alt="Party emoji">
+                                        
+                                        <h2 class="nk-block-title fw-normal" style="color:black ;font-family:Manrope; font-weight: 500; ">Thank you!</h2>
+                                        <h2 class="nk-block-title fw-normal" style="color:black ;font-family:Manrope; font-weight: 500; ">Your appointment has been scheduled!</h2>
+                                        <br>
+                                        <p style="font-family:Manrope; font-size: 20px;line-height: 20px; font-weight: 400;">Check your email for the appointment details
+                                        or click here to <a href="https://customers.inticure.online/">login</a>
+                                        <br/>
+                                        <p style="font-family:Manrope; font-size: 12px;line-height: 20px; font-weight: 400;">
+                                        If you don’t see the email in your inbox, please check your spam or junk folder.
+                                        </p>
+                                        </p>
+
+                                    </div>
+                                    
+                                    
+                                    <!--<div class="nk-kyc-app-action text-center">
+                                        <button type="submit" class="btn btn-lg btn-round" style="background-color:#34013f ; color:white">Continue</button>
+                                        {#<a type="button" href="{{url_for('phone_verification_message')}}" class="btn btn-lg btn-dark">Continue</a>#}
+                                    </div> -->
+                                    
+                                    <div class="text-center pt-4">
+                                        {#<a href="http://customers.inticure.com/">Login to your account</a>#}
+
+                                        {#<p>If you have any question, please contact our support team <a href="mailto:info@inticure.com">info@inticure.com</a></p>#}
+                                        {#<a href="{{url_for('enter_otp')}}" class="btn btn-lg btn-dark">Continue</a>#}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- For mobile -->
+                            <div class=" d-sm-block d-md-none" >
+                                <div class="nk-kyc-app p-sm-2 " {#style="margin-left:100px;margin-right:100px;"#}>
+                                    {#
+                                    <div class="nk-kyc-app-icon">
+                                        <em class="icon ni ni-emails"></em>
+                                    </div>
+                                    #}
+
+                                    <div class="nk-block-head-content text-center" style="font-family:Manrope; font-weight: 500; font-size: 16px;line-height: 30px; ">
+                                        <img src="{{url_for('static',filename='images/party-popper.png')}}" width="30" height="30" alt="Party emoji">
+                                        
+                                        <h2 class="nk-block-title fw-normal" style="color:black ;font-family:Manrope; font-weight: 500; ">Thank you!</h2>
+                                        <h2 class="nk-block-title fw-normal" style="color:black ;font-family:Manrope; font-weight: 500; ">Your appointment has been scheduled!</h2>
+                                        <br>
+                                        <p style="font-family:Manrope; font-size: 20px;line-height: 20px; font-weight: 400;">Check your email for the appointment details</p>
+                                    
+
+                                    
+
+                                    </div>
+                                    
+                                    
+                                    <div class="nk-kyc-app-action text-center" href="https://customers.inticure.online/">
+                                        <button type="submit" class="btn btn-lg btn-round" style="background-color:#34013f ; color:black">Continue</button>
+                                        {#<a type="button" href="{{url_for('phone_verification_message')}}" class="btn btn-lg btn-dark">Continue</a>#}
+                                    </div>
+                                    
+                                    <div class="text-center pt-4">
+                                        {#<a href="http://customers.inticure.com/">Login to your account</a>#}
+
+                                        {#<p>If you have any question, please contact our support team <a href="mailto:info@inticure.com">info@inticure.com</a></p>#}
+                                        {#<a href="{{url_for('enter_otp')}}" class="btn btn-lg btn-dark">Continue</a>#}
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                            {#</div>#}
+                        {#</div><!-- .card -->#}
+                        {#
+                        <div class="text-center pt-4">
+                            <p>If you have any question, please contact our support team <a href="mailto:info@inticure.com">info@inticure.com</a></p>
+                        </div>
+                        #}
+                    </div> <!-- .nk-block -->
+                </div><!-- .kyc-app -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- content @e -->
+<a href="https://www.flaticon.com/free-icons/congratulation" title="congratulation icons" style="display:none ;">Congratulation icons created by juicy_fish - Flaticon</a>
+{% endblock %}

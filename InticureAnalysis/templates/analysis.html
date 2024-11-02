@@ -1,0 +1,1480 @@
+
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/Site-icon.png')}}">
+    <!-- Page Title  -->
+    <title>Inticure Analysis</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/dashlite.css')}}">
+    <link id="skin-default" rel="stylesheet" href="{{url_for('static',filename='assets/css/theme.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/survey.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/transitions.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+
+
+<!-- table -->
+<style>
+    table.custom-table {
+        border-collapse: collapse;
+    }
+
+    table.custom-table td,
+    table.custom-table th {
+        border: none !important;
+    }
+
+    table.custom-table thead tr:first-child th {
+        border-top: none !important;
+    }
+
+    table.custom-table thead tr:first-child th:last-child {
+        border-right: none !important;
+    }
+
+    table.custom-table thead th:first-child {
+        border-left: none !important;
+    }
+
+    table.custom-table thead th:last-child {
+        border-right: none !important;
+    }
+
+    table.custom-table tbody td:first-child {
+        border-left: none !important;
+    }
+
+    table.custom-table tbody td:last-child {
+        border-right: none !important;
+    }
+</style>
+<!-- table css end -->
+
+<style>
+
+.n-sc{
+    background-color: #ffffff;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.s-p{
+    /* left:10%; */
+}
+.q{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    height:0px;
+
+}
+
+.t-center{
+        margin-top: 10%;
+        margin-bottom: 20%;
+        height:20%
+    }
+.d-o-b{
+    margin-top: 10px;
+    margin-left:10px ;
+}
+    /* mobile screen */
+    @media screen and (max-width: 820px ) {
+    .n-sc {
+        margin-left: 0px;
+        margin-right: 30px;
+
+    }
+    .s-p{
+        margin-left: 0px;
+        margin-right: 30px;
+        margin-top: 30px;
+        padding: 0px;
+        /* left:5%; */
+    }
+    .t-center{
+        margin-top: 40%;
+        margin-bottom: 40%;
+        height:20%
+    }
+    .d-o-b{
+    margin-top: 10px;
+    margin: 0px;
+    padding: 0px;
+    }
+}
+</style>
+</head>
+
+<body class="nk-body npc-invest " {#style="background-color:#fafafa;"#} style="background-color: #ffffff;">
+    <div class="nk-app-root">
+        <!-- wrap @s -->
+        <div class="nk-wrap ">
+            <!-- main header @s -->
+            <div class="nk-header nk-header-fluid " style="background-color: #ffffff;">
+                <div class="container-xl wide-xl">
+                    <div class="nk-header-wrap">
+                        
+                        <div class="nk-header-brand">
+                            <a href="https://www.inticure.com" class="logo-link">
+                                <img class="logo-light logo-img" src="{{url_for('static',filename='images/Main-logo-1.png')}}" srcset="{{url_for('static',filename='images/Main-logo-1.png')}}" alt="logo">
+                                <img class="logo-dark logo-img" src="{{url_for('static',filename='images/Main-logo-1.png')}}" srcset="{{url_for('static',filename='images/Main-logo-1.png')}}" alt="logo-dark">
+                            </a>
+                        </div><!-- .nk-header-brand -->
+                        <div class="nk-header-menu" data-content="headerNav">
+                            <div class="nk-header-mobile">
+                                <div class="nk-header-brand">
+                                    <a href="https://www.inticure.com" class="logo-link">
+                                        <img class="logo-light logo-img" src="{{url_for('static',filename='images/logo.png')}}" srcset="{{url_for('static',filename='images/logo2x.png')}}" alt="logo">
+                                        <img class="logo-dark logo-img" src="{{url_for('static',filename='images/logo-dark.png')}}" srcset="{{url_for('static',filename='images/logo-dark2x.png')}}" alt="logo-dark">
+                                    </a>
+                                </div>
+                                <div class="nk-menu-trigger mr-n2">
+                                    <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-arrow-left"></em></a>
+                                </div>
+                            </div>
+                            
+                                </li>
+                                
+                                        </li>
+                                        
+                                        </li>
+                                        
+                                        </li>
+                                        
+                                        </li>
+                                        
+                                    </ul>
+                                    <!-- .nk-menu-sub -->
+                                </li>
+                                
+                        </div>
+                        
+                    </div><!-- .nk-header-wrap -->
+                </div><!-- .container-fliud -->
+            </div>
+            <!-- main header @e -->
+            <div class="mm-survey-progress">
+                <div class="mm-survey-progress-bar mm-progress"></div>
+            </div>
+           
+                            <div class="container" style="background-color: #ffffff;">
+                                <div class="col-sm-12 ">
+                                    <!-- Responsive Changes margin -->
+                                    <div class="mm-survey" style="background-color: #ffffff; margin: 0px">
+
+                                        
+
+                                        <div class="mm-survey-bottom" >
+                                            <!-- Responsive Changes margin -->
+                                            <div class="mm-survey-container n-sc" {#style="background-color: #ffffff;margin-left: 0px;margin-right: 30px;"#} {#style="background-color: #ffffff; margin-left: 30px; margin-right: 30px;"#}>
+                                                <input type="hidden" id="location" name="location" value="{{session.country}}">
+                                                <!-- <main id="swup" class="transition-fade"> -->
+
+                                                    {% for question in questionnaire_list %}
+                                                    <!-- Responsive Changes : margin and padding -->
+                                                <div  class="mm-survey-page s-p {% if loop.index == 1 %} active {% endif %}"  data-page="{{ loop.index }}" {#style="margin-left: 0px;margin-right: 30px;margin-top: 30px;padding: 0px;"#}>
+
+                                                    <div class="mm-survery-content">
+                                                        <div class="mm-survey-question ">
+
+                                                            <p  {#class="p1"#} style="font-family:Manrope ;font-weight:400;font-size: 15px;line-height: 30px;">{{question['question']}}</p>
+
+                                                        </div>
+
+
+                                                        {#{% if question['options'] %}#}
+                                                        <!-- Responsive changes -->
+                                                        <div class="mm-survey-item" style="margin-bottom: -30px;">
+
+                                                        {% for option in question['options'] %}
+                                                        {% if question.answer_type == "radio select" %}
+
+
+                                                            <input type="radio" id="radio0{{option['id']}}"  data-item="1" name="answer{{question.id}}" value="{{option['id']}}" />
+                                                            <label for="radio0{{option['id']}}" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p style="font-family:Manrope ;font-weight:400;font-size: 20px;">{{option['option']}}</p></label>
+
+
+                                                        <!-- </div> -->
+                                                        {% elif question.answer_type == "radio_select" %}
+                                                        {#<div class="mm-survey-item">#}
+
+                                                            <input type="radio" id="radio0{{option['id']}}"  data-item="1" name="answer{{question.id}}" value="{{option['id']}}" />
+                                                            <label for="radio0{{option['id']}}" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p>{{option['option']}}</p></label>
+
+
+                                                        <!-- </div> -->
+                                                        {% elif question.answer_type == "textfield" %}
+                                                        
+                                                        <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label class="form-label" ></label>
+                                                            <div class="form-control-wrap">
+                                                                <input type="text" class="form-control" id="text{{question.id}}" {#id="text{{option['id']}}"#}  data-item="1" name="answer{{question.id}}" style="font-family:Manrope ;font-weight:400;font-size: 16px;" />
+                                                                <label for="text{{question.id}}"><span></span><p></p></label>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                        <!-- </div> -->
+
+                                                        {% elif question.answer_type == "checkbox" %}
+                                                    
+                                                            <input type="checkbox" {#class="custom-control-input"#} id="cb{{option['id']}}"  data-item="1" name="answer{{question.id}}" value="{{option['id']}}" />
+                                                            <label {#class="custom-control-label"#} for="cb{{option['id']}}" style="font-family:Manrope ;font-weight:400;font-size: 18px;line-height: 30px;"><span>{{option['option']}}</span></label>
+                                                        
+                                                        {% endif %}
+                                                        {% endfor %}
+
+                                                        {% if question.answer_type == "dropdown_select" %}
+
+                                                            <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label style="font-size:16px;" for="hi1">
+
+                                                                </label>
+                                                                <div class="form-control-wrap ">
+                                                                    <div class="form-control-select">
+                                                                        <select class="form-control fs-18px fw-medium" id="drop{{question.id}}" name="answer{{question.id}}" style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                            <option value="">Select</option>
+                                                                            {% for option in question['options'] %}
+                                                                            <option value="{{option['id']}}">{{option['option']}}</option>
+                                                                            {% endfor %}
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                     
+                                                        {% endif %}
+
+                                     
+                                                        </div>
+
+
+                                                        
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+
+                                          
+                                                <div class="mm-survey-page s-p" data-page="{{question_list_length+1}}" {#style="margin-left: 0px;margin-right: 30px;margin-top: 30px;padding: 0px;"#}>
+                                                    <div class="mm-survery-content">
+                                                       
+                                                        <div class="mm-survey-item" style="margin-bottom: 0px;">
+                                                            <div class="card">
+                                                                <!-- Responsive Changes -->
+                                                                <div class="card-inner content-center" style="margin: 0px;padding: 0px;">
+                                                                <div class="col-sm-6">
+                                                                    <div class="nk-kyc-app-text mx-auto">
+                                                                        <label  style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                            Do you have a gender preference for your doctor?
+                                                                    (* We can't guarantee that you will always get your preference. But we will
+                                                                    try our best to accomodate your request.)
+                                                                        </label>
+                                                               
+                                                                <input type="radio" id="male"  data-item="1" name="doc_gender" value="male" onchange="Timeslots()"/>
+                                                            <label for="male" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p>Male</p></label>
+                                                            <input type="radio" id="female"  data-item="1" name="doc_gender" value="female" onchange="Timeslots()"/>
+                                                            <label for="female" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p>Female</p></label>
+                                                            <input type="radio" id="either"  data-item="1" name="doc_gender" value="" onchange="Timeslots()"/>
+                                                            <label for="either" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p>Either</p></label>
+                                                               
+                                                            </div>
+                                                                <div class="form-group">
+                                                                    <label for="language" style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                        Do you have a language preference for your doctor?
+                                                                        (* We can't guarantee that you will always get your preference. But we will
+                                                                try our best to accomodate your request.)
+                                                                    </label>
+                                                                    <div class="form-control-wrap ">
+                                                                        <div class="form-control-select">
+                                                                            <select class="form-control fs-18px fw-medium" id="language" name="language" style="font-family:Manrope ;font-weight:400;font-size: 15px;" required onchange="Timeslots()">
+                                                                                <option value="">Select</option>
+                                                                                {% for language in languages %}
+                                                                                <option value="{{language.language}}">{{language.language}}</option>
+                                                                                {% endfor %}
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                               
+                                                <div class="mm-survey-page s-p" data-page="{{question_list_length+2}}" {#style="margin-left: 0px;margin-right: 30px;margin-top: 30px;padding: 0px;"#} style="margin-top: 40px;" >
+                                                    <div class="mm-survery-content">
+                                                       
+                                                        <div class="mm-survey-item" style="margin-bottom: 0px;">
+                                                            <div class="card">
+                                                                <!-- Responsive Changes -->
+                                                                <div class="card-inner content-center" style="margin: 0px;padding: 0px;">
+                                                                    <p style="font-family:Manrope ;font-weight:400;font-size: 15px;"> What is your preferred name?</p>
+                                                                    <div class="row g-4">
+
+                                                            <div class="col-sm-4">
+
+                                                                <div class="form-group">
+                                                                    <label class="form-label" style="font-family:Manrope ;font-weight:400;font-size: 15px;">First Name</label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control" id="first_name" name="first_name" style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                    <label class="form-label" style="font-family:Manrope ;font-weight:400;font-size: 15px;">Last Name</label>
+                                                                    <div class="form-control-wrap">
+                                                                        <input type="text" class="form-control" id="last_name" name="last_name" style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row g-4" style="margin-top:20px ;">
+                                                            <div class="col-sm-8">
+                                                            <div class="form-group" style="margin-left: 5px ;margin-right: 5px ; margin-top: 20px;">
+                                                                <label class="form-label" style="font-family:Manrope ;font-weight:400;font-size: 15px;" for="message">
+                                                                    This is your personal message to the doctor. Feel free to share any concerns you have or
+                                                                    ask any questions. Our world class doctors and licensed therapists are always empathetic,
+                                                                    polite and non judgemental. And remember all your consultations are confidential.
+                                                                </label>
+                                                                <div class="form-control-wrap">
+                                                                    <textarea class="form-control form-control-md" id="message" name="message" style="font-family:Manrope ;font-weight:400;font-size: 15px;"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Customer name and comments section end-->
+                                                <!-- Time slot selection section -->
+                                                <div class="mm-survey-page" data-page="{{question_list_length+3}}" style="margin-left: 0px;margin-right: 30px;margin-top: 30px;padding: 0px;">
+                                                    <div class="mm-survery-content">
+                                                        <div class="mm-survey-question">
+                                                            <p style="font-family:Manrope ;font-weight:400;font-size: 18px;">Almost there! Select a timeslot that works for you</p>
+                                                            
+                                                        </div>
+                                                     
+                                                            <div class="mm-survey-item">
+                                                                <div class="card">
+                                                                    <div id="card-inner" class="card-inner content-center" style="display:flex;justify-content:between;">
+                                                                        <div class="col-sm-6">
+
+                                                                            <p id="doctorMessage" style="margin-top:50px ;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                                Unfortunately a doctor that matches your language preference is currently unavailable. But here are the time slots for another excellent doctor.
+                                                                            </p>
+
+                                                                            <p id="doctorgender" style="margin-top:50px ;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                                Unfortunately a doctor that matches your gender preference is currently unavailable. But here are the time slots for another excellent doctor.
+                                                                            </p>
+                                                                            <p id="bothpreference" style="margin-top:50px ;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                                Unfortunately a doctor that matches your preferences is currently unavailable. But here are the time slots for another excellent doctor.
+                                                                            </p>
+
+                                                                            <div class="boxed" style="padding-top:10px;overflow:scroll; height: 400px;width: 600px;">
+                                                                                {#<div class="g-4 align-center " id="time_box" >#}
+                                                                                <div class="g-4 " style="margin-top: 0px;" id="time_box" >
+                                                                                    <div class="g m-auto">
+                                                                                        <p style="margin-top:100px ;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                                            Available time slots will appear here
+                                                                                        </p>
+                                                                                    </div>
+                                                                                
+                                                                                </div>
+                                                                                <!-- <div id="test"></div> -->
+                                                                                <table class="table custom-table" >
+                                                                                    <thead >
+                                                                                        <tr id="t_head" class="text-center" style="color:black;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                                            <th></th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody >
+                                                                                        <tr id="t_row" class="text-center" >
+                                                                                            <td>
+
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                       
+                                                                        </div>
+                                                                        
+
+                                                                    </div>
+                                                                </div>
+                                                       
+                                                            </div>
+                                                       
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                <div class="mm-survey-page" data-page="{{question_list_length+4}}" style="margin-left: 0; margin-right: 30px; margin-top: 30px; padding: 0;">
+    <div class="mm-survery-content">
+        <div class="mm-survey-question">
+            <p style="font-family: Manrope; font-weight: 400; font-size: 18px;">
+                Please provide your details
+            </p>
+        </div>
+        <div class="mm-survey-item">
+            <div class="card">
+                <div class="card-inner content-center d-o-b">
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                    What is your date of birth<span style="color: #D41060;">*</span>
+                                </label>
+                                <div class="form-control-wrap">
+                                    <input type="date" class="form-control" id="dob" name="dob" data-date-format="yyyy-mm-dd" required onchange="checkAge()">
+                                </div>
+                            </div>
+                            
+
+                             <div class="row g-4" style="display: none;" id="guardianPermission">
+                    <div class="g" style="margin-top: 10px;">
+                        <div class="custom-control custom-control-sm custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="guardian_agree" name="guardian_agree" required>
+                            <label class="custom-control-label" for="guardian_agree" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                I confirm that I have the permission of a guardian to proceed.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                    How would you like to receive the appointment confirmation?
+                                </label>
+                                <div class="form-control-wrap">
+                                    <select class="form-control" id="confirmation_method" name="confirmation_method" onchange="toggleContactInput()" required>
+                                        <option value="">Select an option</option>
+                                        <option value="email">Email</option>
+                                        <option value="whatsapp">WhatsApp</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="email_input" class="row g-4" style="display: none;">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label id="label_email" class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                    What’s your email address? We will be sending your doctor's appointment confirmations to this email.
+                                </label>
+                                <label id="label_email2" class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                    Please Enter your Email address to continue.
+                                </label>
+                                <div class="form-control-wrap">
+                                    <input type="email" class="form-control" id="email_contact" name="email_contact">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="whatsapp_input" class="row g-4" style="display: none;">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                    What’s your WhatsApp number? We will be sending your doctor's appointment confirmations to this number.
+                                </label>
+                                <div class="form-control-wrap">
+                                    <input type="tel" class="form-control" id="whatsapp_contact" name="whatsapp_contact">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4" style="margin-top: 10px;">
+                        <div class="g" style="margin-top: 10px;">
+                            <div class="custom-control custom-control-sm custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" style="background-color: #6A1B78;" id="agree_terms" name="agree_terms" required>
+                                <label class="custom-control-label" for="agree_terms" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                    I agree to the
+                                    <a href="https://inticure.com/terms-conditions/">Terms & Conditions</a>,
+                                    <a href="https://inticure.com/privacy-policy/">Privacy Policy</a> and
+                                    <a href="https://inticure.com/refund_cancellation/">Telehealth consent</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                                <!-- DOB and email section end -->
+        
+                                            </div>
+
+                                            <div class="mm-survey-controller" style="background-color: #ffffff;margin-top: -50px;">
+                                                <div class="mm-prev-btn">
+                                                    <button style="border-radius :25px;  background: #fafafa; color:#6A1B78; border:1px solid; border-color:#6A1B78 ;margin-top: -50px;">Back</button>
+                                                </div>
+                                                <div class="mm-next-btn" >
+                                                    <button  disabled="true" style="margin-top: -20px;">Next</button>
+                                                </div>
+                                                <div class="mm-finish-btn">
+                                                    <button style="border-radius :25px; " id="submit">Submit</button>
+
+                                                </div>
+                                        
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        
+        </div>
+        <!-- wrap @e -->
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+        // Display the flashed message using Toastr
+        $(document).ready(function() {
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        toastr["{{ category }}"]("{{ message }}");
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        });
+    </script>
+
+<script>
+
+function checkAge() {
+        const dob = document.getElementById('dob').value;
+        const dobDate = new Date(dob);
+        const today = new Date();
+        
+        const age = today.getFullYear() - dobDate.getFullYear();
+        const month = today.getMonth() - dobDate.getMonth();
+        const day = today.getDate() - dobDate.getDate();
+        
+        if (month < 0 || (month === 0 && day < 0)) {
+            age--;
+        }
+
+        const guardianPermission = document.getElementById('guardianPermission');
+        const dobError = document.getElementById('dobError');
+        const guardianAgree = document.getElementById('guardian_agree');
+
+        if (age < 18) {
+            guardianPermission.style.display = 'block';
+            dobError.style.display = 'block';
+            guardianAgree.setAttribute('required', 'required');
+        } else {
+            guardianPermission.style.display = 'none';
+            dobError.style.display = 'none';
+            guardianAgree.removeAttribute('required');
+        }
+    }
+    function toggleContactInput() {
+        var method = document.getElementById('confirmation_method').value;
+        var emailInput = document.getElementById('email_input');
+        var whatsappInput = document.getElementById('whatsapp_input');
+        var label_email = document.getElementById('label_email');
+        var label_email2 = document.getElementById('label_email2');
+
+
+        
+        emailInput.style.display = method === 'email' ? 'block' : 'block';
+        whatsappInput.style.display = method === 'whatsapp' ? 'block' : 'none';
+        label_email.style.display = method === 'whatsapp'? 'block': 'none';
+        label_email2.style.display = method === 'whatsapp'? 'none': 'block';
+    }
+</script>
+
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    <script src="{{url_for('static',filename='assets/js/bundle.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/scripts.js')}}"></script>
+    <script src="{{url_for('static',filename='js/vendors/jquery-steps/jquery.steps.js')}}"> </script>
+<script src="{{url_for('static',filename='js/vendors/jquery-steps/jquery.steps.min.js')}}"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+<script src="{{url_for('static',filename='js/transition.js')}}"></script>
+<!-- moment js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+<script>
+    var input = document.querySelector("#whatsapp_contact");
+    window.intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+            fetch('https://ipinfo.io?token=<your_token>', {cache: 'reload'}).then(function(resp) {
+                return resp.json();
+            }).then(function(resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "us";
+                callback(countryCode);
+            }).catch(function() {
+                callback("us");
+            });
+        },
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+</script>
+
+
+<script>
+    jQuery(document).ready(function ($) {
+    $('.mm-prev-btn').hide();
+
+        var x;
+        var count;
+        var current;
+        var percent;
+        var z = [];
+
+        init();
+        getCurrentSlide();
+        goToNext();
+        goToPrev();
+        getCount();
+        // checkStatus();
+        // buttonConfig();
+        buildStatus();
+        deliverStatus();
+        submitData();
+        goBack();
+
+        function init() {
+
+            $('.mm-survey-container .mm-survey-page').each(function() {
+                console.log('survey start');
+                var item;
+                var page;
+
+                item = jQuery(this);
+                page = item.data('page');
+
+                item.addClass('mm-page-'+page);
+                //item.html(page);
+
+            });
+
+        }
+
+        function getCount() {
+
+            count = $('.mm-survey-page').length;
+            return count;
+
+        }
+// Function to check if inputs are selected or typed
+        function checkInputs() {
+  var activePage = $('.mm-survey-page.active');
+
+  // Check if there are any input fields in the active page
+  if (activePage.find('input, select').length === 0) {
+    // alert('No input fields found on this page.');
+    console.log("no input fields can't proceed")
+    return false;
+  }
+
+
+  var inputs = activePage.find('input[type="checkbox"], input[type="radio"], input[type="text"], select');
+
+  var checkboxes = inputs.filter(':checkbox');
+  var radios = inputs.filter(':radio');
+  var texts = inputs.filter(':text');
+  var selects = inputs.filter('select');
+
+  // Check if any checkbox with the same name is selected
+  var checked = false;
+  checkboxes.each(function() {
+    console.log("inside each");
+    if ($(this).prop('checked')) {
+        console.log("cb checked");
+      checked = true;
+      return false; // Exit loop early
+    }
+  });
+  if (checkboxes.length > 0 && !checked) {
+    console.log("no checkbox selected");
+    alert('Please select an option');
+    return false;
+  }
+
+  // Check if any radio button with the same name is selected
+  var radioChecked = false;
+  radios.each(function() {
+    console.log("inside radio each");
+    if ($(this).prop('checked')) {
+      radioChecked = true;
+      return false; // Exit loop early
+    }
+  });
+  if (radios.length > 0 && !radioChecked) {
+
+    alert('Please select an option');
+    return false;
+  }
+
+  // Check if any text input has a value
+  var textFilled = true;
+  texts.each(function() {
+    if ($(this).val() === '') {
+      textFilled = false;
+      return false; // Exit loop early
+    }
+  });
+  if (!textFilled) {
+    alert('Please fill in all fields');
+    return false;
+  }
+
+  // Check if any select input has a value
+  var selectFilled = true;
+  selects.each(function() {
+    if ($(this).val() === '') {
+      selectFilled = false;
+      return false; // Exit loop early
+    }
+  });
+  if (!selectFilled) {
+    alert('Please select an option');
+    return false;
+  }
+
+  return true;
+}
+
+
+        function goToNext() {
+
+            $('.mm-next-btn').on('click', function() {
+                if (checkInputs()){
+                    console.log("no blank inputs");
+                goToSlide(x);
+                getCount();
+                current = x + 1;
+                var g = current/count;
+                buildProgress(g);
+                var y = (count + 1);
+                getButtons();
+                $('.mm-survey-page').removeClass('active');
+                $('.mm-page-'+current).addClass('active');
+                getCurrentSlide();
+                checkStatus();
+                if( $('.mm-page-'+count).hasClass('active') ){
+                    if( $('.mm-page-'+count).hasClass('pass') ) {
+                        $('.mm-finish-btn').addClass('active');
+                    }
+                    else {
+                        $('.mm-page-'+count+' .mm-survery-content .mm-survey-item').on('click', function() {
+                            $('.mm-finish-btn').addClass('active');
+                        });
+                    }
+                }
+                else {
+                    $('.mm-finish-btn').removeClass('active');
+                    if( $('.mm-page-'+current).hasClass('pass') ) {
+                        $('.mm-survey-container').addClass('good');
+                        $('.mm-survey').addClass('okay');
+                    }
+                    else {
+                        $('.mm-survey-container').removeClass('good');
+                        $('.mm-survey').removeClass('okay');
+                    }
+                }
+                buttonConfig();
+            }
+            });
+
+        }
+
+        function goToPrev() {
+
+            $('.mm-prev-btn').on('click', function() {
+                goToSlide(x);
+                getCount();
+                current = (x - 1);
+                var g = current/count;
+                buildProgress(g);
+                var y = count;
+                getButtons();
+                $('.mm-survey-page').removeClass('active');
+                $('.mm-page-'+current).addClass('active');
+                getCurrentSlide();
+                checkStatus();
+                $('.mm-finish-btn').removeClass('active');
+                if( $('.mm-page-'+current).hasClass('pass') ) {
+                    $('.mm-survey-container').addClass('good');
+                    $('.mm-survey').addClass('okay');
+                }
+                else {
+                    $('.mm-survey-container').removeClass('good');
+                    $('.mm-survey').removeClass('okay');
+                }
+                buttonConfig();
+            });
+
+        }
+
+        function buildProgress(g) {
+
+            if(g > 1){
+                g = g - 1;
+            }
+            else if (g === 0) {
+                g = 1;
+            }
+            g = g * 100;
+            $('.mm-survey-progress-bar').css({ 'width' : g+'%' });
+
+        }
+
+        function goToSlide(x) {
+
+            return x;
+
+        }
+
+        function getCurrentSlide() {
+
+            $('.mm-survey-page').each(function() {
+
+                var item;
+
+                item = $(this);
+
+                if( $(item).hasClass('active') ) {
+                    x = item.data('page');
+                }
+                else {
+
+                }
+
+                return x;
+
+            });
+
+        }
+
+        function getButtons() {
+
+            if(current === 0) {
+                current = y;
+            }
+            if(current === count) {
+                $('.mm-next-btn').hide();
+            }
+            else if(current === 1) {
+                $('.mm-prev-btn').hide();
+            }
+            else {
+                $('.mm-next-btn').show();
+                $('.mm-prev-btn').show();
+            }
+
+        }
+
+        $('.mm-survey-q li input').each(function() {
+
+            var item;
+            item = $(this);
+
+            $(item).on('click', function() {
+                if( $('input:checked').length > 0 ) {
+                    // console.log(item.val());
+                    $('label').parent().removeClass('active');
+                    item.closest( 'li' ).addClass('active');
+                }
+                // else if($('input:')){
+
+                // }
+                else {
+                    //
+                }
+            });
+
+        });
+
+        percent = (x/count) * 100;
+        $('.mm-survey-progress-bar').css({ 'width' : percent+'%' });
+
+        function checkStatus() {
+            $('.mm-survery-content .mm-survey-item').on('click', function() {
+                var item;
+                item = $(this);
+                item.closest('.mm-survey-page').addClass('pass');
+            });
+        }
+
+        function buildStatus() {
+            $('.mm-survery-content .mm-survey-item').on('click', function() {
+                var item;
+                item = $(this);
+                item.addClass('bingo');
+                item.closest('.mm-survey-page').addClass('pass');
+                $('.mm-survey-container').addClass('good');
+            });
+        }
+
+        function deliverStatus() {
+            $('.mm-survey-item').on('click', function() {
+                if( $('.mm-survey-container').hasClass('good') ){
+                    $('.mm-survey').addClass('okay');
+                }
+                else {
+                    $('.mm-survey').removeClass('okay');
+                }
+                buttonConfig();
+            });
+        }
+
+        function lastPage() {
+            if( $('.mm-next-btn').hasClass('cool') ) {
+                alert('cool');
+            }
+        }
+
+        function buttonConfig() {
+            if( $('.mm-survey').hasClass('okay') ) {
+                $('.mm-next-btn button').prop('disabled', false);
+            }
+            else {
+                $('.mm-next-btn button').prop('disabled', true);
+            }
+        }
+
+    
+        function collectData() {
+
+            var map = {};
+            var ax = ['0','red','mercedes','3.14','3'];
+            var answer = '';
+            var total = 0;
+            var ttl = 0;
+            var g;
+            var c = 0;
+
+            $('.mm-survey-item input:checked').each(function(index, val) {
+                var item;
+                var data;
+                var name;
+                var n;
+
+                item = $(this);
+                data = item.val();
+                name = item.data('item');
+                n = parseInt(data);
+                total += n;
+
+                map[name] = data;
+
+            });
+
+        
+
+        }
+
+        function goBack() {
+            $('.mm-back-btn').on('click', function() {
+                // $('.mm-survey-bottom').slideDown();
+                // $('.mm-survey-results').slideUp();
+            });
+        }
+    });
+</script>
+<!-- getting value from analysis using jquery -->
+
+
+<script>
+$(function(){
+
+  $('input[name="time"]').click(function() {
+
+    console.log("inside")
+    // Get the selected value of the radio button
+    var selectedValue = $(this).val();
+
+    // Find the hidden input field in the same div as the radio button
+    var hiddenInput = $(this).closest('div').find('input[type="hidden"]');
+
+    // Get the value of the hidden input field
+    var hiddenValue = hiddenInput.val();
+
+    // Log the selected value and hidden value to the console
+    console.log("newtime",selectedValue);
+    console.log("newdate",hiddenValue);
+  });
+// });
+
+// On submit button click
+
+$('#submit').on('click',function(){
+
+     if ($('#email_last_page').length) {
+
+   email_elem=true;
+     }else{
+        email_elem=false;
+     }
+
+if($("#dob").val() == "") {
+    alert("Please provide details");
+    return;
+}
+if($(email_elem==true && "#email_last_page").val() == "") {
+    alert("Please provide details");
+    return;
+}
+if ($("#agree_terms").is(':not(:checked)')){
+ alert("Please check the checkbox to continue");
+ return;
+}
+if ($("#guardian_agree").is(':not(:checked)')){
+    const dob = document.getElementById('dob').value;
+    const dobDate = new Date(dob);
+    const today = new Date();
+    
+    const age = today.getFullYear() - dobDate.getFullYear();
+    const month = today.getMonth() - dobDate.getMonth();
+    const day = today.getDate() - dobDate.getDate();
+    
+    if (month < 0 || (month === 0 && day < 0)) {
+        age--;
+    }
+    if (age < 18) {
+        alert("Please confirm the permission of your guardian");
+        return;
+    } 
+}
+
+var questions_dict={};
+var questions_list=[];
+var doctor_flag = "junior";
+
+ {% for question in questionnaire_list %}
+  var quest_id = '{{question.id}}';
+  var quest = '{{question.question}}';
+
+ 
+        {% if question.answer_type == "radio_select" %}
+        var answer_value="";
+        var selected_answer=$("input[name='answer{{question.id}}']:checked").val();
+        {% elif question.answer_type == "checkbox" %}
+        var answer_value="";
+        var selected_answer= $.makeArray($('input[name="answer{{question.id}}"]:checkbox:checked')
+                          .map(function() { return $(this).val() }));
+        console.log(selected_answer);
+        {% elif question.answer_type == "textfield" %}
+        var selected_answer="";
+        var answer_value = $("#text{{question.id}}").val();
+        console.log(selected_answer);
+        console.log(answer_value);
+        {% elif question.answer_type == "dropdown_select" %}
+        var answer_value="";
+        var selected_answer = $("#drop{{question.id}}").val();
+        console.log(selected_answer);
+        {% endif %}
+        questions_list.push({
+        "question_id" : quest_id,
+        "question": quest,
+        "options":
+        [{"option_id":selected_answer,
+          "answer":answer_value
+    }]
+});
+ {% endfor %}
+
+// NEW TIME AND DATE
+
+  $('input[name="time"]').click(function() {
+
+    console.log("inside")
+    // Get the selected value of the radio button
+    var selectedValue = $(this).val();
+    console.log("sele",selectedValue);
+    // Find the hidden input field in the same div as the radio button
+    var hiddenInput = $(this).closest('div').find('input[type="hidden"]');
+
+    // Get the value of the hidden input field
+    var hiddenValue = hiddenInput.val();
+
+    // Log the selected value and hidden value to the console
+    console.log("newtime",selectedValue);
+    console.log("newdate",hiddenValue);
+  });
+// });
+
+var timeElement = $("input[name='time']:checked");
+if (timeElement.length > 0) {
+  var time = timeElement.val();
+  console.log(time);
+  var hid_el = timeElement.closest('div').find('input[type="hidden"]');
+  console.log(hid_el);
+  if (hid_el.length > 0) {
+    var date = hid_el.val();
+    console.log(date);
+  } else {
+    console.log("No hidden input found.");
+  }
+} else {
+  console.log("No time element checked.");
+  time="";
+  date="";
+}
+
+
+//  NAME, MESSAGE, DOC GENDER, LANG, DOB
+
+        var first_name = $("input[name='first_name']").val();
+        var last_name = $("input[name='last_name']").val();
+        var message = $('#message').val();
+        console.log(first_name, last_name)
+
+        // var doc_gender=$("#doc_gender").val();
+        var doc_gender=$("input[name='doc_gender']:checked").val();
+        console.log("doc gender",doc_gender);
+        var language = $("#language").val();
+        var dob = $("#dob").val();
+
+        var confirmation_method = $("#confirmation_method").val();
+        var email_contact = $("#email_contact").val();
+        var whatsapp_contact = $("#whatsapp_contact").val();
+
+         if (confirmation_method == "email")
+          {
+            if (email_contact == "") {
+                alert("Please provide your email address for confirmation.");
+                return;
+            }
+        } else if (confirmation_method == "whatsapp") {
+            if (whatsapp_contact == "") {
+                alert("Please provide your WhatsApp number for confirmation.");
+                return;
+            }
+            else if (email_contact == ""){
+                alert("Please provide your email address for confirmation")
+                return
+            }
+        } else {
+        alert("Please select a confirmation method.");
+        return;
+        }
+        // last page email if country india
+        email_last_page=$("#email_last_page").val();
+
+        questions_dict.questions=questions_list,
+        questions_dict.appointment_date= date,
+        questions_dict.appointment_time=time,
+        questions_dict.first_name = first_name,
+        questions_dict.last_name = last_name,
+        questions_dict.message = message,
+        // appending doc_gender and language variables to the dictionary
+        questions_dict.gender_pref=doc_gender,
+        questions_dict.language_pref=language,
+        questions_dict.doctor_flag = doctor_flag,
+        questions_dict.dob = dob,
+        questions_dict.email_last_page = email_last_page,
+        questions_dict.confirmation_method = confirmation_method,
+        questions_dict.email_contact = email_contact,
+        questions_dict.whatsapp_contact = whatsapp_contact
+
+    console.log(questions_list);
+    $.ajax({
+        type: "POST",
+        url: "{{url_for('data_analysis')}}",
+        data: JSON.stringify(questions_dict),
+        contentType: "application/json",
+        dataType: 'json' ,
+        success: function(response){
+            console.log("success")
+            // console.log(response);
+
+            window.location.href='{{url_for("new_appointment_preview",invoice_id = 0)}}';
+
+        },
+        error: function(err) {
+        // alert(err);
+        console.log(err)
+        alert("Oops.. something went wrong try again");
+        }
+});
+console.log('data analysis')
+});
+    
+});
+</script>
+<style>
+    /* Style for larger screens */
+    #card-inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Flex-direction changes to column on small screens */
+    @media (max-width: 768px) {
+        #card-inner {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+
+ <script>
+        // Function to reload the page once within 3 minutes
+
+        window.onload = function() {
+            // Check if the page has been reloaded before within the current session
+            if (!sessionStorage.getItem('reloaded')) {
+                // Set a timeout to reload the page after 3 minutes (180000 milliseconds)
+                setTimeout(function() {
+                    // Mark the page as reloaded in sessionStorage
+                    sessionStorage.setItem('reloaded', 'true');
+                    window.location.reload();   
+                }, 1000); // 3 minutes in milliseconds
+            }
+        };
+    </script>
+
+<!-- JS FUNCTION TO CALL AVAILABLE TIME SLOTS -->
+<script>
+    const Timeslots = async () => {
+        console.log("available time slot")
+      
+        var gender = document.querySelector('input[name = "doc_gender"]:checked').value;
+        console.log(gender);
+        var language = document.getElementById("language").value;
+        console.log(language);
+  
+        var doctor_flag = "junior";
+        console.log(doctor_flag);
+    
+        var location=document.getElementById("location").value;
+        console.log(location);
+        var location_id ="";
+        var payload={};
+       
+        payload.language=language,
+        payload.gender=gender,
+    
+        payload.location=location,
+        payload.doctor=doctor_flag,
+        payload.location_id=location_id,
+        payload.appointment_date="",
+     
+        console.log("payload",payload);
+      
+    const response = await fetch("https://api.inticure.online/api/doctor/available_slots", {
+    method: 'POST',
+    body: JSON.stringify(payload), // string or object
+    headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Methods':'GET,POST,PUT,DELETE,PATCH,OPTIONS'
+    }
+    });
+
+    const myJson = await response.json();
+    console.log("response",myJson);
+    var slots=myJson['slots']
+    console.log('ksajdhflkjsdhf',slots);
+
+    function toggleDoctorMessage(isDoctorAvailable, isgenderavailable) {
+        const doctorMessage = document.getElementById('doctorMessage');
+        const doctorgender = document.getElementById('doctorgender');
+        const bothpreference = document.getElementById('bothpreference');
+        
+        if (!isDoctorAvailable && !isgenderavailable) {
+            bothpreference.style.display = 'block';
+            doctorgender.style.display = 'none';
+            doctorMessage.style.display = 'none';
+        } else if (!isDoctorAvailable && isgenderavailable) {
+            doctorMessage.style.display = 'block'; 
+            bothpreference.style.display = 'none';
+            doctorgender.style.display = 'none';
+        }else if (isDoctorAvailable && !isgenderavailable){
+            doctorMessage.style.display = 'none'; 
+            bothpreference.style.display = 'none';
+            doctorgender.style.display = 'block';
+        }else{
+            doctorgender.style.display = 'none';
+            doctorMessage.style.display = 'none';
+            bothpreference.style.display = 'none';
+        }
+    }
+    
+
+    // Example usage: Call this function based on your condition
+    const doctorAvailable = myJson['preferred_one'] // Replace with your actual condition
+    const doctorAvailablegender = myJson['preferred_gender'] // Replace with your actual condition
+    toggleDoctorMessage(doctorAvailable,doctorAvailablegender);
+
+    var options="";
+   
+
+    // if no doctors available
+    if (myJson['slots'].length === 0){
+        console.log("no time")
+        var time_label=document.getElementById("time_label");
+            // time_label.style.display = "none";
+
+        var no_time_slot="";
+        var message=myJson['message'];
+        $('#time_box').empty();
+        // $.each(message,function(index,value){
+        no_time_slot = '<div class="g m-auto"><p></p></div>'
+        $('#time_box').append(no_time_slot);
+    // });
+    }
+    else{
+        console.log("time slots available");
+           
+    $('#time_box').empty();
+    $('#test').empty();
+    $('#t_head').empty();
+    $('#t_row').empty();
+
+    $.each(slots,function(index,value){
+    console.log(value);
+    // console.log("ts val",value.time_slots);
+    timeslots = value.time_slots;
+    var input="";
+
+
+    $.each(timeslots, function(i, ts) {
+
+        var radioId = 'time'+index+'_'+i;
+        var label = '<label for="' + radioId + '">' + ts.time_slot+ '</label>';
+        var radioBtn = '<input type="radio" id="' + radioId + '" name="time" value="' + ts.time_slot + '">';
+
+        var hid = '<input type = "hidden" id="date'+index+'_'+i +'" name="date" value="'+ value.date +'">';
+        var div = '<div><div class="custom-control custom-radio" style="margin-bottom:8px;">' + radioBtn + label + hid+'</div>'+'</div>';
+        input += div;
+    });
+
+    var input1='<th>'+ moment(value.date).format('DD MMM YYYY')+'</th>';
+    $('#t_head').append(input1);
+    var t=' <td>'+ input+'</td>';
+    $('#t_row').append(t)
+
+
+    timeslots.forEach(function(ts, i) {
+        var radioId = '#time' + index + '_' + i;
+        $(radioId).on('change', function() {
+            // Get the selected time slot
+            var selectedTimeSlot = $(this).val();
+            var selectedDate = $('#date' + index + '_' + i).val();
+            var gender = document.querySelector('input[name = "doc_gender"]:checked').value;
+            console.log(gender);
+            var language = document.getElementById("language").value;
+            console.log(language);
+  
+
+            console.log("Selected Time Slot:", selectedTimeSlot);
+            console.log("Selected Date:", selectedDate);
+
+            // Now send this data in another request
+            const payload = {
+                time_slot: selectedTimeSlot,
+                date: selectedDate,
+                gender:gender,
+                language:language,
+                user_location:"{{session.country}}"
+            };
+
+            // Perform a new fetch request
+            fetch("https://api.inticure.online/api/doctor/timeslots", {
+                method: 'POST',
+                body: JSON.stringify(payload),
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const doctorCardContainer = document.getElementById('doctorCardContainer');
+                doctorCardContainer.innerHTML = createDoctorCard(data['data']);
+                console.log('Response from the new request:', data['data']);
+                // Do something with the response if necessary
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+
+    function createDoctorCard(doctor) {
+    const card = `
+        <div class="card">
+            <h4>${doctor.fullname}</h4>
+            <p class="price">${doctor.price} <span class="currency">${doctor.currency}</span></p>
+            <p><strong>Specialization:</strong> ${doctor.specialization}</p>
+            <p><strong>Bio:</strong> ${doctor.bio}</p>
+        </div>
+    `;
+    return card;
+}
+
+
+
+
+});
+
+}
+
+    return myJson;
+
+}
+</script>
+
+    <style>
+        .p1{
+            color: rgba(0, 0, 0, 0.89);
+            font-family : "SofiaProWeb", Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 3rem;
+            line-height: 1.17;
+        }
+    </style>
+    
+
+</body>
+
+</html>

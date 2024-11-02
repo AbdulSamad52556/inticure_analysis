@@ -1,0 +1,247 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- content @s -->
+<div class="nk-content nk-content-lg nk-content-fluid ">
+
+<!-- * SWEET ALERT * -->
+    <!-- Begin alerts -->                
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <script>
+       
+    Swal.fire({
+    
+           title:"{{ category.title() }}!",
+           // success , error , warning ,info
+    
+           text: "{{ message }}",
+           // Custom message flashed from your flask routes
+    
+           icon: "{{ category }}"
+           // success , error , warning ,info
+    
+    })
+    
+    </script>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    <!-- End alerts -->
+
+    <div class="container-xl wide-lg">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="kyc-app wide-sm m-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-xs mx-auto">
+                        <div class="nk-block-head-content text-center">
+                            {#<h2 class="nk-block-title fw-normal" font-family="SofSofiaProWeb, Arial, Helvetica, sans-serif;">Please Enter Your Phone Number</h2>#}
+                            <div class="nk-block-des">
+                                {#<p>Please enter your phone number to continue</p>#}
+                                <!-- <p>You will receive a one time password (OTP) in this number</p> -->
+                            </div>
+                        </div>
+                    </div><!-- .nk-block-head -->
+                    <div class="nk-block">
+                        {#<div class="card card-bordered">#}
+                            {#<div class="card-inner card-inner-lg">#}
+                                <form action="" method="POST">
+                                    <input type="hidden" id="form_type" name="form_type" value="next">
+                                    <!-- Responsive Changed -->
+                                <div class="nk-kyc-app p-sm-2 email-s " {#style="margin-left:100px;margin-right:100px;"#}>
+                                    {#
+                                    <div class="nk-kyc-app-icon">
+                                        <em class="icon ni ni-emails"></em>
+                                    </div>
+                                    #}
+
+                                    
+                                    <div class="nk-kyc-app-text mx-auto" style="margin-top: 15%;">
+                                        <p class="lead text-center" style=" font-family: 'Manrope';font-size: 15px;font-weight: 500;">We have sent verification OTP to your phone</p>
+                                        {# 
+                                        <!-- <label class="purple_radio">One
+                                            <input type="radio" checked="checked" name="radio">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                          <label class="purple_radio">Two
+                                            <input type="radio" name="radio">
+                                            <span class="checkmark"></span>
+                                          </label> -->
+                                          #}
+                                        
+                                        <br>
+                                        {#<p class="lead" style="margin-bottom: 0.5px; font-family: 'Manrope';font-size: 15px;font-weight: 400;">Enter your email address for verification. We will be sending your OTP verification to this email address</p>#}
+                                        <div class="form-group">
+                                            <label class="form-label" for="otp" style=" font-family: 'Manrope';font-size: 15px;font-weight: 400;">Enter otp</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" id="otp" name="otp" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" style="margin-top: 1px; display: none;" >
+                                            <label class="form-label"></label>
+                                            <div class="form-control-wrap">
+                                                {#<div class="form-icon form-icon-left">#}
+                                                    {#<em class="icon ni ni-calendar"></em>#}
+                                                {#</div>#}
+                                                <input type="date" class="form-control " id="dob" name="dob" data-date-format="yyyy-mm-dd"  >
+                                            </div>
+                                            <!-- <div class="form-note">Date format <code>yyyy-mm-dd</code></div> -->
+                                        </div>
+                                        <!-- <ul class="list-inline" style="margin-top: 2px; margin-bottom: 10px;">
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="edit_morning_" name="edit_medicine_time_" value="morning">
+                                                    <label class="custom-control-label" for="edit_morning_">Morning</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="edit_afternoon_" name="edit_medicine_time_" value="afternoon">
+                                                    <label class="custom-control-label" for="edit_afternoon_">Afternoon</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="edit_night_" name="edit_medicine_time_" value="night">
+                                                    <label class="custom-control-label" for="edit_night_">Night</label>
+                                                </div>
+                                            </li>
+                                            
+                                        </ul> -->
+
+                                        <!-- {#<p class="lead">question 1</p>#}
+                                        <div class="form-group">
+                                            <label class="form-label" for="phone">Enter Your Phone Number</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" id="phone" name="phone">
+                                            </div>
+                                        </div>
+                                        {#<p>OR</p>#}
+                                        {#<p>Use <a href="{{url_for('email_signup')}}">Email</a> to sign up</p>#} -->
+
+                                        <div class="g" >
+                                            <div class="custom-control custom-control-sm custom-checkbox" style="">
+                                                <input type="checkbox" class="custom-control-input" id="agree_terms" name="agree_terms" required>
+                                                <label class="custom-control-label" for="agree_terms">
+                                                    I agree to the 
+                                                    <a href="https://www.inticure.com">Terms & Conditions</a>,
+                                                    <a href="https://www.inticure.com">Privacy Policy</a> and
+                                                    <a href="https://www.inticure.com">Telehealth consent</a>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-center">
+                                    <div class="nk-kyc-app-action text-center p-1">
+                                        <button type="submit" class="btn btn-lg btn-round" style="background-color:#6A1B78 ; color:white">Next</button>
+                                        {#<a type="button" href="{{url_for('phone_verification_message')}}" class="btn btn-lg btn-dark">Continue</a>#}
+                                    </div>
+                                    
+                                
+                                <!-- </div> -->
+                            </form>
+                            <div class=" p-1">
+                                <form action="" method="POST">
+                                    <input type="hidden" id="form_type" name="form_type" value="resend">
+                                    <button type="submit" class="btn btn-lg btn-round" style=" color:#6A1B78">Resend OTP</button>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                            {#</div>#}
+                        {#</div><!-- .card -->#}
+                        {#
+                        <div class="text-center pt-4">
+                            <p>If you have any question, please contact our support team <a href="mailto:info@inticure.com">info@inticure.com</a></p>
+                        </div>
+                        #}
+                    </div> <!-- .nk-block -->
+                </div><!-- .kyc-app -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- content @e -->
+<!-- <style>
+    .custom-radio input:checked ~ .checkmark {
+      background-color: #34013f;
+    }
+    .input[type="radio"]:checked ~ .checkmark {
+      background-color: #34013f;
+    }
+</style> -->
+<style>
+    /* The container */
+    .purple_radio {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* Hide the browser's default radio button */
+    .purple_radio input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .purple_radio:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+    
+    /* When the radio button is checked, add a blue background */
+    .purple_radio input:checked ~ .checkmark {
+      background-color: #34013f;
+    }
+    
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    /* Show the indicator (dot/circle) when checked */
+    .purple_radio input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    /* Style the indicator (dot/circle) */
+    .purple_radio .checkmark:after {
+         top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+    </style>
+{% endblock %}

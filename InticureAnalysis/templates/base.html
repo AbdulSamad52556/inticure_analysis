@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/Site-icon.png')}}">
+    <!-- Page Title  -->
+    <title>Inticure Analysis</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/dashlite.css')}}">
+    <link id="skin-default" rel="stylesheet" href="{{url_for('static',filename='assets/css/theme.css')}}">
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- red hat display regular -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap" rel="stylesheet"> -->
+
+<!-- Red Hat Display font cdn regular 400wt and bold 900 wt -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;900&display=swap" rel="stylesheet">
+
+<!-- Manrope font regular wt 400 cdn -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+
+<!-- Manrope medium wt 500 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body{
+        background-color: #ffffff;
+    }
+    @media screen and (max-width: 480px) {
+body {
+    /* background-color: lightgreen; */
+    
+}
+
+}
+@media screen and (min-width: 800px ) {
+    .email-s {
+    /* background-color: lightgreen; */
+    margin-left:100px;
+    margin-right:100px;
+    }
+}
+@media screen and (max-width: 480px ) {
+    .big-sc {
+    /* background-color: lightgreen; */
+    /* font-style: italic; */
+    }
+    .split {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+}
+</style>
+    
+</head>
+
+<body class="nk-body npc-invest " {#style="background-color:#fafafa;"#} style="background-color: #ffffff;">
+    <div class="nk-app-root">
+        <!-- wrap @s -->
+        <div class="nk-wrap ">
+            <!-- main header @s -->
+            <div class="nk-header nk-header-fluid " style="background-color: #ffffff;">
+                <div class="container-xl wide-xl">
+                    <div class="nk-header-wrap">
+                        {#
+                        <div class="nk-menu-trigger mr-sm-2 d-lg-none">
+                            <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-menu"></em></a>
+                        </div>
+                        #}
+                        <div class="nk-header-brand">
+                            <a href="https://www.inticure.com" class="logo-link">
+                                <img class="logo-light logo-img" src="{{url_for('static',filename='images/Main-logo-1.png')}}" srcset="{{url_for('static',filename='images/Main-logo-1.png')}}" alt="logo">
+                                <img class="logo-dark logo-img" src="{{url_for('static',filename='images/Main-logo-1.png')}}" srcset="{{url_for('static',filename='images/Main-logo-1.png')}}" alt="logo-dark">
+                            </a>
+                        </div><!-- .nk-header-brand -->
+                        <div class="nk-header-menu" data-content="headerNav">
+                           
+                                </li>
+                                
+                                        </li>
+                                       
+                                        </li>
+                                        
+                                        </li>
+                                       
+                                        </li>
+                                       
+                                    </ul>
+                                    <!-- .nk-menu-sub -->
+                                </li>
+                                
+                        </div>
+                        
+                    </div><!-- .nk-header-wrap -->
+                </div><!-- .container-fliud -->
+            </div>
+            <!-- main header @e -->
+            <!-- content @s -->
+            <div class="nk-content nk-content-fluid">
+                <div class="container-xl wide-xl">
+                    <div class="nk-content-inner">
+                        <div class="nk-content-body">
+                            {% block content %}
+                            <p>Starter page for Demo6 layout.</p>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- wrap @e -->
+    </div>
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    <script src="{{url_for('static',filename='assets/js/bundle.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/scripts.js')}}"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .p1{
+            color: rgba(0, 0, 0, 0.89);
+            font-family : "SofiaProWeb", Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 3rem;
+            line-height: 1.17;
+        }
+    </style>
+
+
+</body>
+
+</html>

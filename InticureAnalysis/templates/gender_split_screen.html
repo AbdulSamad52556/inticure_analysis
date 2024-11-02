@@ -1,0 +1,211 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  /* font-family: Arial; */
+  color: white;
+}
+
+.split {
+  /* height: 100%; */
+  /* width: 50%; */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  height: 100%;
+  width: 50%;
+  /* background-color: #111; */
+  background-color:  #582768;
+;
+}
+
+.right {
+  right: 0;
+  height: 100%;
+  width: 50%;
+  /* background-color: red; */
+  background: #D6769F;
+
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* text-align: center; */
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.gndr{
+  font-family:Red Hat Display; 
+  font-style: normal;
+  font-weight: 900;
+  font-size: 150px; 
+  color: #ffffff;
+}
+
+.gndr-desc{
+  font-family:'Manrope';
+  font-size: 16px; 
+  line-height: 30px;
+}
+.gndr-title{
+  font-family:'Manrope';
+  font-size: 16px; 
+  line-height: 30px;
+}
+
+@media screen and (max-width: 820px ) {
+    .big-sc {
+    /* background-color: lightgreen; */
+    /* font-style: italic; */
+    }
+    
+    .split {
+  /* height: 100%; */
+  /* width: 100%; */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  /* overflow-x: hidden; */
+  padding-top: 20px;
+}
+.left {
+  left: 0;
+  width: 50%;
+  height: 100%;
+  /* background-color: #111; */
+  background-color:  #582768;
+;
+}
+
+.right {
+  right: 0;
+  width: 50%;
+  height: 100%;
+  /* background-color: red; */
+  background: #D6769F;
+
+}
+.centered {
+  position: absolute;
+  /* padding-left: 150px;
+  padding-right: 150px; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* transform: translate(-50%, -50%); */
+  /* text-align: center; */
+}
+.gndr{
+  font-family:Red Hat Display; 
+  font-style: normal;
+  font-weight: 900;
+  font-size: 50px; 
+  color: #ffffff;
+}
+.gndr-desc{
+  font-family:'Manrope';
+  font-size: 16px; 
+  line-height: 30px;
+  display: none;
+}
+.gndr-title{
+  font-family:'Manrope';
+  font-size: 16px; 
+  line-height: 30px;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="split left big-sc">
+  <div class="centered" style="color: white;">
+    {#<img src="img_avatar2.png" alt="Avatar woman">#}
+    {#<h2 style="color:#ffffff ;">Jane Flex</h2>#}
+    {#<p>Some text.</p>#}
+    <p class="gndr-title" {#style="font-family:'Manrope';font-size: 16px; line-height: 30px;"#}>Do you identify as</p>
+    <h2 class="gndr" {#style="font-family:Red Hat Display; font-style: normal;font-weight: 900;font-size: 150px; color: #ffffff;"#}>Male</h2>
+    <br>
+    <p class="gndr-desc" {#style="font-family:Manrope;font-size: 16px; line-height: 30px;"#}>Did you know 1 in 10 men in India suffer from Erectile Dysfunction <br> (inability to get or maintain 
+        an erection long enough for sexual intercourse)? <br>So you are not alone. And don’t feel embarrassed 
+        to talk about it or any other sexual issues you may be facing.</p>
+
+    <br>
+    <br>
+
+    <form action="" method="POST">
+        <input type="hidden" name="gender" id="gender" value="male">
+        <button type="submit" class="btn btn-lg btn-round" style="background-color:#582768 ; color:white; border-color: #ffffff;width:150px;">
+            Continue  <em class="icon ni ni-arrow-long-right"></em></button>
+    </form>
+
+  </div>
+  <!-- <div style="text-align:left ; padding-right: 100 px;">
+  <h2 style="padding-right: 100 px;">Jane Flex</h2>
+    <p>Some text.</p> -->
+</div>
+<!-- </div> -->
+
+<div class="split right big-sc">
+  <div class="centered">
+    {#<img src="img_avatar.png" alt="Avatar man">#}
+    {#<h2>John Doe</h2>#}
+    {#<p>Some text here too.</p>#}
+
+    <p class="gndr-title" {#style="font-family:Manrope; font-size: 16px;line-height: 30px; "#}>Do you identify as</p>
+    <h2 class="gndr" {#style="font-family:Red Hat Display; font-style: normal;font-weight: 900;font-size: 150px; color: #ffffff;"#}>Female</h2>
+    <br>
+    <p class="gndr-desc" {#style="font-family:Manrope; font-size: 16px; line-height: 30px"#}>Based on a study of female patients, the data showed that sexual problems are not 
+        reported even when they are widely prevalent. 64% of women can't talk about this to their partners too. <br>
+        82% of patients had some sort of sexual problem. But you can openly talk to our medical doctors. They are 
+        non-judgemental and will treat you with warmth, respect, and utmost care.
+        </p>
+    <br>
+    <br>
+    <form action="" method="POST" class="flex">
+        <input type="hidden" name="gender" id="gender" value="female">
+        <button type="submit" class="btn btn-lg btn-round" style="background-color:#D6769F ; color:white; border-color: #ffffff;width:150px;">
+            Continue  <em class="icon ni ni-arrow-long-right"></em></button>
+    </form>
+
+  </div>
+</div>
+</div>
+
+<style>
+        /* Default button styles */
+        .btn {
+            background-color: #582768;
+            color: white;
+            border-color: #ffffff;
+            font-size: 18px; /* Default font size */
+        }
+
+        /* Media query for small screens */
+        @media (max-width: 600px) {
+            .btn {
+                font-size: 14px; /* Decreased font size on small screens */
+            }
+        }
+    </style>
+</body>
+
+{% endblock %}

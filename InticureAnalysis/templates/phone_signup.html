@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- content @s -->
+<div class="nk-content nk-content-lg nk-content-fluid ">
+
+
+ <!-- * SWEET ALERT * -->
+    <!-- Begin alerts -->                
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <script>
+       
+    Swal.fire({
+    
+           title:"{{ category.title() }}!",
+           // success , error , warning ,info
+    
+           text: "{{ message }}",
+           // Custom message flashed from your flask routes
+    
+           icon: "{{ category }}"
+           // success , error , warning ,info
+    
+    })
+    
+    </script>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+    <!-- End alerts -->
+
+
+    <div class="container-xl wide-lg">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="kyc-app wide-sm m-auto">
+                    <div class="nk-block-head nk-block-head-lg wide-xs mx-auto">
+                        <div class="nk-block-head-content text-center">
+                            <h2 class="nk-block-title fw-normal" font-family="SofSofiaProWeb, Arial, Helvetica, sans-serif;">Please Enter Your Phone Number</h2>
+                            <div class="nk-block-des">
+                                {#<p>Please enter your phone number to continue</p>#}
+                                <p>You will receive a one time password (OTP) in this number</p>
+                            </div>
+                        </div>
+                    </div><!-- .nk-block-head -->
+                    <div class="nk-block">
+                        {#<div class="card card-bordered">#}
+                            {#<div class="card-inner card-inner-lg">#}
+                                <form action="" method="POST">
+                                <div class="nk-kyc-app p-sm-2 text-center">
+                                    <div class="nk-kyc-app-icon">
+                                        <em class="icon ni ni-call"></em>
+                                    </div>
+                                    
+                                    <div class="nk-kyc-app-text mx-auto">
+                                        {#<p class="lead">question 1</p>#}
+                                        <div class="form-group">
+                                            <label class="form-label" for="phone">Enter Your Phone Number</label>
+                                            <div class="form-control-wrap">
+                                                <input type="text" class="form-control" id="phone" name="phone" required>
+                                            </div>
+                                        </div>
+                                        {#<p>OR</p>#}
+                                        {#<p>Use <a href="{{url_for('email_signup')}}">Email</a> to sign up</p>#}
+                                    </div>
+                                    <div class="nk-kyc-app-action">
+                                        <button type="submit" class="btn btn-lg btn-round btn-dark" style="background-color:#6A1B78 ;">Continue</button>
+                                        {#<a type="button" href="{{url_for('phone_verification_message')}}" class="btn btn-lg btn-dark">Continue</a>#}
+                                        
+                                    </div>
+                                
+                                </div>
+                            </form>
+                            {#</div>#}
+                        {#</div><!-- .card -->#}
+                        {#
+                        <div class="text-center pt-4">
+                            <p>If you have any question, please contact our support team <a href="mailto:info@inticure.com">info@inticure.com</a></p>
+                        </div>
+                        #}
+                    </div> <!-- .nk-block -->
+                </div><!-- .kyc-app -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- content @e -->
+{% endblock %}

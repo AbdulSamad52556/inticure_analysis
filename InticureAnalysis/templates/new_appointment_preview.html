@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <form action="" method="POST">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between g-3">
+                        
+                        <div class="nk-block-head-content">
+                            
+                            <h3 class="nk-block-title page-title">Appointment Booking Details
+                             </h3>
+                            <div class="nk-block-des text-soft">
+                                <ul class="list-inline">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nk-block-head-content">
+                           
+                            <a href="https://api.inticure.online/api/customer/payment-page/{{session.temp_data_id}}?appointment_flag={{ session.appointment_flag }}&new_data={{new_data}}" type="submit" class="btn btn-md btn-outline-dark d-sm-inline-flex" >UPI PAYMENT</a>
+                            <a href="https://api.inticure.online/api/customer/checkout/{{session.temp_data_id}}?appointment_flag={{ session.appointment_flag }}&new_data={{new_data}}" type="submit" class="btn btn-md btn-outline-dark d-sm-inline-flex" >CARD PAYMENT</a>
+
+                            <a href="{{url_for('analysis',gender=session.gender)}}" class="btn btn-md btn-outline-danger d-sm-inline-flex"><span>Cancel</span></a>
+                  
+                           
+                        </div>
+                    </div>
+                </div><!-- .nk-block-head -->
+                <div class="nk-block">
+                    <div class="card">
+                        <div class="card-aside-wrap">
+                            <div class="card-content">
+                               
+                                <div class="card-inner" style="margin-bottom:50px ;margin-top:50px ;">
+                                    <div class="nk-block">
+                                        <div class="nk-block-head">
+                                            <h5 class="title" style="margin-left:115px ;">Appointment Information</h5>
+                                           
+                                        </div><!-- .nk-block-head -->
+                                        <div class="profile-ud-list" style="margin:auto ;">
+                                           
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Full Name :</span>
+                                                    <span class="profile-ud-value">{{session['questions_data']['first_name']}} {{session.questions_data.last_name}} {# </span>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Date of Birth :</span>
+                                                    <span class="profile-ud-value">{#{{appointment_details.cust_dob}}#}</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Status :</span>
+                                                    
+                                                    <span class="profile-ud-value">New </span>
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Session Type :</span>
+                                                    
+                                                    <span class="profile-ud-value">{{new_data.session_type}} </span>
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Duration :</span>
+                                                    
+                                                    <span class="profile-ud-value">{{new_data.duration}} minutes</span>
+                                                    
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Category :</span>
+                                                    
+                                                    <span class="profile-ud-value">{{session.category_title}}</span>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Email Address :</span>
+                                                    <span class="profile-ud-value">{{session.questions_data.email_contact}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Appointment Date :</span>
+                                                    <span class="profile-ud-value">{{session.questions_data['appointment_date']}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Appointment Time :</span>
+                                                    <span class="profile-ud-value">
+                                                        {{session.questions_data['appointment_time']}}
+                                                        
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            
+                                            <div class="nk-divider divider md"></div>
+                                            <h6 class="title" style="margin-left:115px ;">Fees Information</h6>
+                                            <div class="profile-ud-list" style="margin:auto ;">
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Appointment Fee :</span>
+                                                    <span class="profile-ud-value">{{payment.base_amount}} {{payment.currency|upper}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Discount :</span>
+                                                    <span class="profile-ud-value">{{payment.discounts}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Tax :</span>
+                                                    <span class="profile-ud-value">{{payment.taxes}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Other Charges :</span>
+                                                    <span class="profile-ud-value">{#{{appointment_details.rescheduled_time}}#}0.0</span>
+                                                </div>
+                                            </div>
+
+                                            </div>
+                                            <div class="nk-divider divider md"></div>
+                                            <h6 class="title" style="margin-left:115px ;">Total Amount</h6>
+                                            <div class="profile-ud-list" style="margin:auto ;">
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label"><strong>Total Amount:</strong></span>
+                                                    <span class="profile-ud-value">{{payment.total}} {{payment.currency|upper}}</span>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label"><strong>Amount To Be Paid:</strong></span>
+                                                    <span class="profile-ud-value"><strong>{{payment.total}} {{payment.currency|upper}}</strong></span>
+                                                </div>
+                                                
+                                            </div>
+                                            <ul class="list-inline">
+                                                <li>
+                                                <div class="form-group" style="margin-left:55px;">
+                                                    <label class="form-label" for="coupon" style="color:#8094AE;">Enter Coupon Code:</label>
+                                                    <div class="form-control-wrap">
+                                                        <input type="text" class="form-control form-control-sm" id="coupon" name="coupon" value="">
+                                                    </div>
+                                                </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-round btn-sm btn-dim btn-outline-light">Apply Coupon</button>
+                                                        
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            </div>
+                                       
+                                    </div><!-- .nk-block -->
+                                   
+                                    </div>
+                                    
+                                        </div>
+                                        <!-- .bq-note -->
+                                    </div>
+                                    <!-- .nk-block -->
+                                </div><!-- .card-inner -->
+                                
+                                    </div>
+                                    <!-- .nk-block -->
+                                </form>
+                                            <!-- .bq-note-item -->
+                                        </div>
+                                        <!-- .bq-note -->
+                                    </div>
+                                    <!-- .nk-block -->
+                                </div><!-- .card-inner -->
+                            </div>
+                        </div>
+                            </div>
+                        </div><!-- .card-aside-wrap -->
+                    </div><!-- .card -->
+                </div><!-- .nk-block -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ################# RESCHEDULE MODAL @s ############################ -->
+
+<!-- reschedule modal @s-->
+<div class="modal fade" tabindex="-1" id="reschedule" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Reschedule Appointment </h5>
+                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                    <em class="icon ni ni-cross"></em>
+                </a>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST">
+                    <input type="hidden" id="form_type" name="form_type" value="reschedule">
+                    
+                    <div class="form-group">
+                        <label class="form-label">Reschedule Date</label>
+                        <div class="form-control-wrap">
+                            {#<div class="form-icon form-icon-left">#}
+                                {#<em class="icon ni ni-calendar"></em>#}
+                            {#</div>#}
+                            <input type="date" class="form-control " id="reschedule_date" name="reschedule_date" data-date-format="yyyy-mm-dd">
+                        </div>
+                        <!-- <div class="form-note">Date format <code>yyyy-mm-dd</code></div> -->
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Reschedule Time</label>
+                        <div class="form-control-wrap ">
+                            <input type="time" class="form-control " id="reschedule_time" name="reschedule_time" placeholder="Select Time">
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-md btn-dark">Send Reschedule Request</button>
+                        
+                        <a href="#" class="btn btn-md btn-mw btn-dark" data-dismiss="modal">Cancel</a>
+                    </div>
+                </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" id="follow-up" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Follow Up Appointment </h5>
+                <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                    <em class="icon ni ni-cross"></em>
+                </a>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST">
+                    <input type="hidden" id="form_type" name="form_type" value="follow_up">
+                    
+                    <div class="form-group">
+                        <label class="form-label">Follow Up Appointment Date</label>
+                        <div class="form-control-wrap">
+                          
+                            <input type="date" class="form-control " id="follow_up_date" name="follow_up_date" data-date-format="yyyy-mm-dd">
+                        </div>
+                  
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Follow Up Appointment Time</label>
+                        <div class="form-control-wrap ">
+                            <input type="time" class="form-control " id="follow_up_time" name="follow_up_time" placeholder="Select Time">
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-md btn-dark">Send Appointment Request</button>
+                        
+                        <a href="#" class="btn btn-md btn-mw btn-dark" data-dismiss="modal">Cancel</a>
+                    </div>
+                </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+    <base href="../../../">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{{url_for('static',filename='images/Site-icon.png')}}">
+    <!-- Page Title  -->
+    <title>Error  | Inticure</title>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="{{url_for('static',filename='assets/css/dashlite.css')}}">
+    <link id="skin-default" rel="stylesheet" href="{{url_for('static',filename='assets/css/theme.css')}}">
+</head>
+
+<body class="nk-body bg-white npc-default pg-error">
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- wrap @s -->
+            <div class="nk-wrap nk-wrap-nosidebar">
+                <!-- content @s -->
+                <div class="nk-content ">
+                    <div class="nk-block nk-block-middle wide-xs mx-auto">
+                        <div class="nk-block-content nk-error-ld text-center">
+                            <h1 class="nk-error-head" style="color: #34013f;">404</h1>
+                            <h3 class="nk-error-title">Oops! User already registered!</h3>
+                            {#<p class="nk-error-text">We are very sorry for inconvenience. 
+                                It looks like you’re try to access a page that either has been deleted or never existed.</p>#}
+                            <a href="https://www.inticure.online"  class="btn btn-lg btn-primary mt-2" style="background-color:#6A1B78 ;border-color: #6A1B78;">Back To Website</a>
+                            <a href="https://customers.inticure.online/" target="_blank" class="btn btn-lg btn-primary mt-2" style="background-color:#6A1B78 ;border-color: #6A1B78;">Go To Login</a>
+                        </div>
+                    </div><!-- .nk-block -->
+                </div>
+                <!-- wrap @e -->
+            </div>
+            <!-- content @e -->
+        </div>
+        <!-- main @e -->
+    </div>
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    <script src="{{url_for('static',filename='assets/js/bundle.js')}}"></script>
+    <script src="{{url_for('static',filename='assets/js/scripts.js')}}"></script>
+
+</html>
