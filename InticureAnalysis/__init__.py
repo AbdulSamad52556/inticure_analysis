@@ -612,6 +612,8 @@ def new_appointment_preview(invoice_id):
             new_data['email'] = session['email']
         if 'first_name' and 'last_name' in session['questions_data']:
             new_data['name'] = session['questions_data']['first_name'] +' '+session['questions_data']['last_name']
+        if 'loc_id' in session:
+            new_data['loc_id'] = session['loc_id']
 
         print(session)
 

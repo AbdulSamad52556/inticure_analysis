@@ -22,8 +22,9 @@
                             </div>
                         </div>
                         <div class="nk-block-head-content">
-                           
+                           {% if session.country == "India" %}
                             <a href="https://api.inticure.online/api/customer/payment-page/{{session.temp_data_id}}?appointment_flag={{ session.appointment_flag }}&new_data={{new_data}}" type="submit" class="btn btn-md btn-outline-dark d-sm-inline-flex" >UPI PAYMENT</a>
+                            {% endif %}
                             <a href="https://api.inticure.online/api/customer/checkout/{{session.temp_data_id}}?appointment_flag={{ session.appointment_flag }}&new_data={{new_data}}" type="submit" class="btn btn-md btn-outline-dark d-sm-inline-flex" >CARD PAYMENT</a>
 
                             <a href="{{url_for('analysis',gender=session.gender)}}" class="btn btn-md btn-outline-danger d-sm-inline-flex"><span>Cancel</span></a>
