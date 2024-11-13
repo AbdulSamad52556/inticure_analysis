@@ -31,7 +31,7 @@
 
 
                                     <div class="nk-kyc-app-text mx-auto">
-                                        <p class="lead" style="font-family:Manrope ;font-weight:400;font-size: 15px;">What brings you to us today? (Your primary concern)<span style="color:red ;">*</span></p>
+                                        <p class="lead" style="font-family:'Red Hat Display';font-weight:400;font-size: 15px;">What brings you to us today? (Your primary concern)<span style="color:red ;">*</span></p>
                                         {#
                                         <!-- <label class="purple_radio">One
                                             <input type="radio" checked="checked" name="radio">
@@ -56,7 +56,7 @@
                                         <div class="g">
                                             <div class="custom-control custom-radio" style="font-family:Manrope ;font-weight:400;font-size: 18px;">
                                                 <input type="radio" class="custom-control-input" style="color: #34013f;" name="category" id="category{{loop.index}}" value="{{category.id}}" onclick="enableButton()">
-                                                <label class="custom-control-label lead" style="font-family:Manrope ;font-weight:400;font-size: 18px;" for="category{{loop.index}}">{{category.title}}</label>
+                                                <label class="custom-control-label lead" style="font-family:Red Hat Display ;font-weight:400;font-size: 18px;" for="category{{loop.index}}">{{category.title}}</label>
                                             </div>
                                         </div>
                                         <br>
@@ -118,7 +118,7 @@
                                     </div>
                                     <br>
                                     <div class="nk-kyc-app-action text-center">
-                                        <button type="submit" class="btn btn-lg btn-round" style="background-color:#6A1B78 ; color:white" id="sub_btn" disabled>Continue</button>
+                                        <button type="submit" class="btn btn-lg btn-round" style="background-color:#6A1B78 ;font-family:'Manrope'; color:white" id="sub_btn" disabled>Continue</button>
                                         {#<a type="button" href="{{url_for('phone_verification_message')}}" class="btn btn-lg btn-dark">Continue</a>#}
                                     </div>
 

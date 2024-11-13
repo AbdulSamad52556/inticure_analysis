@@ -164,7 +164,8 @@ def analysis(gender):
         print('questionnaire_list:  ',questionnaire_list)
         print('question_list_length:  ',question_list_length)
         print('languages:  ',languages)
-        return render_template('analysis.html',questionnaire_list=questionnaire_list,question_list_length=question_list_length,
+        country = session['country']
+        return render_template('analysis.html',questionnaire_list=questionnaire_list,question_list_length=question_list_length,country=country,
         languages=languages)
     except Exception as e:
         print(e)
@@ -256,20 +257,21 @@ def email_verification_message():
         otp=json.loads(otp.text)
         print(otp)
         if otp_generate.status_code == 200:
-            # return redirect('http://localhost:8002/')
             return redirect('https://customers.inticure.online/')
         else:
             flash("Invalid otp, email not verified","error")
             return redirect(url_for('email_verification_message'))
     return render_template('verification_message.html')
 
+@app.route("/payment_failure",methods=['GET'])
+def payment_failed():
+    return render_template('payment_failed.html')
+
 last_execution_times = {}
 
-# Define a rate limit period (10 seconds in this case)
 RATE_LIMIT_PERIOD = 10
 
 def is_rate_limited(user_id):
-    """Check if the user is rate-limited (executed within the last 10 seconds)."""
     current_time = time.time()
     
     if user_id in last_execution_times:
@@ -605,7 +607,6 @@ def new_appointment_preview(invoice_id):
         print('temp_data_id: ',temp_data_id)
         session['temp_data_id']= temp_data_id
         session['appointment_flag'] = 'first_appointment'
-        print(session)
         new_data['session_type'] = 'single'
         new_data['duration'] = payment_response['duration']
         if 'email' in session:
@@ -691,23 +692,23 @@ def email_signup_US():
 
             session['email']= email
             session['country_for_contact'] = country_for_contact
-            # payload={
-            #     "email":email,
-            #     "country":country
-            # }
-            # json_data=json.dumps(payload)
+            payload={
+                "email":email,
+                "country":country
+            }
+            json_data=json.dumps(payload)
             
-            # print(json_data)
-            # otp_generate=requests.post(base_url+otp_verify_api, data=json_data, headers=headers)
-            # print(otp_generate.status_code)
-            # otp_req=json.loads(otp_generate.text)
-            # print(otp_req)
-            # if otp_req['response_code'] == 400:
-            #     flash("Something went wrong..","error")
-            #     return redirect(url_for('email_signup_US'))
-            #     # return redirect(url_for('user_exists'))
-            # elif otp_req['response_code']==409:
-            #     return redirect('https://customers.inticure.online/')
+            print(json_data)
+            otp_generate=requests.post(base_url+otp_verify_api, data=json_data, headers=headers)
+            print(otp_generate.status_code)
+            otp_req=json.loads(otp_generate.text)
+            print(otp_req)
+            if otp_req['response_code'] == 400:
+                return redirect(url_for('email_signup_US'))
+                # return redirect(url_for('user_exists'))
+            elif otp_req['response_code']==409:
+                flash("User is already created, better Login..","error")
+                return redirect('https://customers.inticure.online/')
             return redirect(url_for('get_started'))
         else:
             if len(email) != 10:

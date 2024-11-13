@@ -115,6 +115,27 @@
                                                     </span>
                                                 </div>
                                             </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Confirmation_method:</span>
+                                                    <span class="profile-ud-value">
+                                                        {{session.questions_data['confirmation_method']}}
+                                                        
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Confirmation address :</span>
+                                                    <span class="profile-ud-value">
+                                                        {% if session.questions_data['whatsapp_contact'] != "" %}
+                                                            {{session.questions_data['whatsapp_contact']}}
+                                                        {% else %}
+                                                            {{session.questions_data['email_contact']}}
+                                                        {% endif %}
+                                                    </span>
+                                                </div>
+                                            </div>
                                             </div>
                                             
                                             <div class="nk-divider divider md"></div>
