@@ -335,16 +335,16 @@ def thank_you_page():
             print(e)
 
         print('questions_data is going ot print line 356 - ',questions_data)
-        if 'email' not in session and 'email_contact' in session and 'email_contact' != "" :
-            email = session['email_contact']
+        if 'email' not in session and 'email_contact' in questions_data and questions_data['email_contact'] != "" :
+            email = questions_data['email_contact']
         elif 'email' in session and session['email'] != "":
             email = session['email']
         else:
             email = None
-
+        email_contact = ''
         if 'email_contact' in questions_data and questions_data['email_contact'] != "":
-            email=questions_data['email_contact']
-            print(email,'line 359')
+            email_contact=questions_data['email_contact']
+            print(email_contact,'line 359')
         try:
             if 'appointment_date' in questions_data:
                 appointment_date=questions_data['appointment_date']
@@ -369,10 +369,10 @@ def thank_you_page():
         except Exception as e:
             print(e)
         print("questions data - 380",questions_data)
-        if questions_data['email_contact'] == "":
-            print('email taken from last page - 379')
-            email = session['email']
-            print(email)
+        # if questions_data['email_contact'] == "":
+        #     print('email taken from last page - 379')
+        #     email = session['email']
+        #     print(email)
         print('sldkjflasdkmclasdvlsdkdjglasmidujoapsdvmaoishjgaoksdfa   ',questions_data)
         category_id = ''
         gender = ''
@@ -417,6 +417,7 @@ def thank_you_page():
             "appointment_date":appointment_date,
             "appointment_time":appointment_time,
             "email":email,
+            "email_contact":email_contact,
             "language_pref":language_pref,
             "gender_pref":gender_pref,
             "doctor_flag":doctor_flag,
@@ -500,17 +501,23 @@ def new_appointment_preview(invoice_id):
     questions_data=session['questions_data']
     category_req=requests.post(base_url+category_api,headers=headers)
     email = ''
+    email_contact = ''
     if 'email_contact' not in questions_data or questions_data['email_contact'] == "":
         print('email taken from last page - 379')
         if 'email' in session:
             email = session['email']
     else:
-        email = questions_data['email_contact']
+        if 'email' in session and session['email'] != "":
+            email = session['email']
+        else:
+            email = questions_data['email_contact']
+        email_contact = questions_data['email_contact']
     if email != "":
         user_api_data = {
             'first_name': questions_data['first_name'],
             'last_name':questions_data['last_name'],
-            'email': email
+            'email': email,
+            'email_contact':email_contact
         }
     else:
         if 'whatsapp_contact' in questions_data and questions_data['whatsapp_contact'] != "":
@@ -520,6 +527,13 @@ def new_appointment_preview(invoice_id):
                 'email': session['whatsapp_contact']
             }
             email = ''
+        else:
+            user_api_data = {
+                'first_name': questions_data['first_name'],
+                'last_name':questions_data['last_name'],
+                'email': session['whatsapp_contact'],
+                'email_contact': email_contact
+            }
     for i in session:
         print(i)
     if 'whatsapp_contact' in questions_data and questions_data['whatsapp_contact'] != "":
@@ -527,6 +541,7 @@ def new_appointment_preview(invoice_id):
         'first_name': questions_data['first_name'],
         'last_name':questions_data['last_name'],
         'email': email,
+        'email_contact':email_contact,
         'whatsapp_contact':questions_data['whatsapp_contact']
         }
     api_data=json.dumps(user_api_data)

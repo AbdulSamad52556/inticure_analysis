@@ -97,13 +97,20 @@
                                             <div class="profile-ud-item">
                                                 <div class="profile-ud wider">
                                                     <span class="profile-ud-label">Email Address :</span>
-                                                    <span class="profile-ud-value">{{session.questions_data.email_contact}}</span>
+                                                    <span class="profile-ud-value">
+                                                    {% if session.email %}
+                                                    {{session.email}}
+                                                    {% else %}
+                                                    {{session.questions_data.email_contact}}
+                                                    {% endif %}
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="profile-ud-item">
                                                 <div class="profile-ud wider">
                                                     <span class="profile-ud-label">Appointment Date :</span>
-                                                    <span class="profile-ud-value">{{session.questions_data['appointment_date']}}</span>
+                                                    <span class="profile-ud-value">
+                                                    {{session.questions_data['appointment_date']}}</span>
                                                 </div>
                                             </div>
                                             <div class="profile-ud-item">
