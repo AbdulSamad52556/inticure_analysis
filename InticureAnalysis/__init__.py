@@ -527,6 +527,13 @@ def new_appointment_preview(invoice_id):
                 'email': session['whatsapp_contact']
             }
             email = ''
+        elif 'whatsapp_contact2' in questions_data and questions_data['whatsapp_contact2'] != "":
+            user_api_data = {
+                'first_name': questions_data['first_name'],
+                'last_name':questions_data['last_name'],
+                'email': session['whatsapp_contact2']
+            }
+            email = ''
         else:
             user_api_data = {
                 'first_name': questions_data['first_name'],
@@ -543,6 +550,14 @@ def new_appointment_preview(invoice_id):
         'email': email,
         'email_contact':email_contact,
         'whatsapp_contact':questions_data['whatsapp_contact']
+        }
+    elif 'whatsapp_contact2' in questions_data and questions_data['whatsapp_contact2'] != "":
+        user_api_data = {
+        'first_name': questions_data['first_name'],
+        'last_name':questions_data['last_name'],
+        'email': email,
+        'email_contact':email_contact,
+        'whatsapp_contact':questions_data['whatsapp_contact2']
         }
     api_data=json.dumps(user_api_data)
     print(api_data)

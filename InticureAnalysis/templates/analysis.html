@@ -490,6 +490,22 @@
                             </div>
                         </div>
                     </div>
+
+                    
+                    <div id="whatsapp_input" class="row g-4" style="display: none;">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="form-label" id="whatsapp_label1" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                    What’s your WhatsApp number? We will be sending your doctor's appointment confirmations to this number.
+                                </label>
+                                
+                                <div class="form-control-wrap">
+                                    <input type="tel" class="form-control" id="whatsapp_contact" name="whatsapp_contact">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                     <div id="email_input" class="row g-4" style="display: none;">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -506,19 +522,21 @@
                             </div>
                         </div>
                     </div>
-                    <div id="whatsapp_input" class="row g-4" style="display: none;">
+                    <div id="whatsapp_input2" class="row g-4" style="display: none;">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
-                                    What’s your WhatsApp number? We will be sending your doctor's appointment confirmations to this number.
+                                
+                                <label class="form-label" id="whatsapp_label2" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                    Please Enter your number for future preference ( preferably WhatsApp )
                                 </label>
                                 <div class="form-control-wrap">
-                                    <input type="tel" class="form-control" id="whatsapp_contact" name="whatsapp_contact">
+                                    <input type="tel" class="form-control" id="whatsapp_contact2" name="whatsapp_contact2">
                                 </div>
 
                             </div>
                         </div>
                     </div>
+                    
                     <div class="row g-4" style="margin-top: 10px;">
                         <div class="g" style="margin-top: 10px;">
                             <div class="custom-control custom-control-sm custom-checkbox">
@@ -614,12 +632,12 @@ function checkAge() {
         var method = document.getElementById('confirmation_method').value;
         var emailInput = document.getElementById('email_input');
         var whatsappInput = document.getElementById('whatsapp_input');
+        var whatsappInput2 = document.getElementById('whatsapp_input2');
         var label_email = document.getElementById('label_email');
         var label_email2 = document.getElementById('label_email2');
 
-
-        
         emailInput.style.display = method === 'email' ? 'block' : 'block';
+        whatsappInput2.style.display = method === 'whatsapp' ? 'none' : 'block';
         whatsappInput.style.display = method === 'whatsapp' ? 'block' : 'none';
         label_email.style.display = method === 'whatsapp'? 'none': 'block';
         label_email2.style.display = method === 'whatsapp'? 'block': 'none';
@@ -658,7 +676,24 @@ function checkAge() {
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
     });
 </script>
-
+<script>
+    var input = document.querySelector("#whatsapp_contact2");
+    window.intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+            fetch("/get-user-country", {cache: 'reload'}).then(function(resp) {
+                const data = resp.json()
+                return data.country;
+            }).then(function(resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "us";
+                callback(countryCode);
+            }).catch(function() {
+                callback("us");
+            });
+        },
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+</script>
 
 <script>
     jQuery(document).ready(function ($) {
@@ -1179,11 +1214,16 @@ if (timeElement.length > 0) {
         var confirmation_method = $("#confirmation_method").val();
         var email_contact = $("#email_contact").val();
         var whatsapp_contact = $("#whatsapp_contact").val();
+        var whatsapp_contact2 = $("#whatsapp_contact2").val();
 
          if (confirmation_method == "email")
           {
             if (email_contact == "") {
                 alert("Please provide your email address for confirmation.");
+                return;
+            }
+            if (whatsapp_contact2 == "") {
+                alert("Please provide your WhatsApp number for confirmation.");
                 return;
             }
         } else if (confirmation_method == "whatsapp") {
@@ -1217,6 +1257,7 @@ if (timeElement.length > 0) {
         questions_dict.confirmation_method = confirmation_method,
         questions_dict.email_contact = email_contact,
         questions_dict.whatsapp_contact = whatsapp_contact
+        questions_dict.whatsapp_contact2 = whatsapp_contact2
 
     console.log(questions_list);
     $.ajax({
@@ -1259,21 +1300,7 @@ console.log('data analysis')
     }
 </style>
 
- <script>
-        // Function to reload the page once within 3 minutes
 
-        window.onload = function() {
-            // Check if the page has been reloaded before within the current session
-            if (!sessionStorage.getItem('reloaded')) {
-                // Set a timeout to reload the page after 3 minutes (180000 milliseconds)
-                setTimeout(function() {
-                    // Mark the page as reloaded in sessionStorage
-                    sessionStorage.setItem('reloaded', 'true');
-                    window.location.reload();   
-                }, 1000); // 3 minutes in milliseconds
-            }
-        };
-    </script>
 
 <!-- JS FUNCTION TO CALL AVAILABLE TIME SLOTS -->
 <script>
