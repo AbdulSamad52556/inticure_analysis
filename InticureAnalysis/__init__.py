@@ -165,6 +165,8 @@ def analysis(gender):
         print('question_list_length:  ',question_list_length)
         print('languages:  ',languages)
         country = session['country']
+        print(session)
+        print(country)
         return render_template('analysis.html',questionnaire_list=questionnaire_list,question_list_length=question_list_length,country=country,
         languages=languages)
     except Exception as e:
@@ -269,7 +271,7 @@ def payment_failed():
 
 last_execution_times = {}
 
-RATE_LIMIT_PERIOD = 10
+RATE_LIMIT_PERIOD = 20
 
 def is_rate_limited(user_id):
     current_time = time.time()
@@ -502,10 +504,15 @@ def new_appointment_preview(invoice_id):
     category_req=requests.post(base_url+category_api,headers=headers)
     email = ''
     email_contact = ''
+    if 'email' not in session:
+        session['email'] = questions_data['email_contact']
+    if 'mobile_num' not in session or session['mobile_num'] == "":
+        session['mobile_num'] = questions_data['contact3']
     if 'email_contact' not in questions_data or questions_data['email_contact'] == "":
         print('email taken from last page - 379')
         if 'email' in session:
             email = session['email']
+            email_contact = session['email']
     else:
         if 'email' in session and session['email'] != "":
             email = session['email']
@@ -524,14 +531,20 @@ def new_appointment_preview(invoice_id):
             user_api_data = {
                 'first_name': questions_data['first_name'],
                 'last_name':questions_data['last_name'],
-                'email': session['whatsapp_contact']
+                'email': email,
+                'email_contact':email_contact,
+                'mobile_num': session['mobile_num'],
+                'whatsapp_contact': questions_data['whatsapp_contact']
             }
             email = ''
         elif 'whatsapp_contact2' in questions_data and questions_data['whatsapp_contact2'] != "":
             user_api_data = {
                 'first_name': questions_data['first_name'],
                 'last_name':questions_data['last_name'],
-                'email': session['whatsapp_contact2']
+                'email': email,
+                'email_contact':email_contact,
+                'mobile_num': session['mobile_num'],
+                'whatsapp_contact': questions_data['whatsapp_contact2']
             }
             email = ''
         else:
@@ -549,7 +562,8 @@ def new_appointment_preview(invoice_id):
         'last_name':questions_data['last_name'],
         'email': email,
         'email_contact':email_contact,
-        'whatsapp_contact':questions_data['whatsapp_contact']
+        'mobile_num': session['mobile_num'],
+        'whatsapp_contact': questions_data['whatsapp_contact']
         }
     elif 'whatsapp_contact2' in questions_data and questions_data['whatsapp_contact2'] != "":
         user_api_data = {
@@ -557,7 +571,8 @@ def new_appointment_preview(invoice_id):
         'last_name':questions_data['last_name'],
         'email': email,
         'email_contact':email_contact,
-        'whatsapp_contact':questions_data['whatsapp_contact2']
+        'mobile_num': session['mobile_num'],
+        'whatsapp_contact': questions_data['whatsapp_contact2']
         }
     api_data=json.dumps(user_api_data)
     print(api_data)

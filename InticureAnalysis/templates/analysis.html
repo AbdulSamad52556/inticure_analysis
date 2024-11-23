@@ -474,6 +474,22 @@
 
                         </div>
                     </div>
+                    {% if country != 'India' %}
+                        <div id="whatsapp_input3" class="row g-4" style="display: block;">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                
+                                <label class="form-label" id="whatsapp_label3" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                    Please enter your contact number
+                                </label>
+                                <div class="form-control-wrap">
+                                    <input type="tel" class="form-control" id="contact3" name="contact3">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
                     <div class="row g-4">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -506,6 +522,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div id="email_input" class="row g-4" style="display: none;">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -522,12 +539,13 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div id="whatsapp_input2" class="row g-4" style="display: none;">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 
                                 <label class="form-label" id="whatsapp_label2" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
-                                    Please Enter your number for future preference ( preferably WhatsApp )
+                                    Please enter your contact number ( preferably whatsapp )
                                 </label>
                                 <div class="form-control-wrap">
                                     <input type="tel" class="form-control" id="whatsapp_contact2" name="whatsapp_contact2">
@@ -544,6 +562,7 @@
                                 <label class="custom-control-label" for="agree_terms" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
                                     I agree to the
                                     <a href="https://inticure.com/terms-conditions/">Terms & Conditions</a>,
+                                    <a href="https://inticure.online/faq/">Refund policies</a>,
                                     <a href="https://inticure.com/privacy-policy/">Privacy Policy</a> and
                                     <a href="https://inticure.com/refund_cancellation/">Telehealth consent</a>
                                 </label>
@@ -660,6 +679,24 @@ function checkAge() {
 
 <script>
     var input = document.querySelector("#whatsapp_contact");
+    window.intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function(callback) {
+            fetch("/get-user-country", {cache: 'reload'}).then(function(resp) {
+                const data = resp.json()
+                return data.country;
+            }).then(function(resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "us";
+                callback(countryCode);
+            }).catch(function() {
+                callback("us");
+            });
+        },
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+</script>
+<script>
+    var input = document.querySelector("#contact3");
     window.intlTelInput(input, {
         initialCountry: "auto",
         geoIpLookup: function(callback) {
@@ -1215,7 +1252,14 @@ if (timeElement.length > 0) {
         var email_contact = $("#email_contact").val();
         var whatsapp_contact = $("#whatsapp_contact").val();
         var whatsapp_contact2 = $("#whatsapp_contact2").val();
-
+        var contact3 = $("#contact3").val();
+        var location=document.getElementById("location").value;
+        console.log(location);
+        console.log(contact3, location)
+        if (location != 'India' && contact3 == ""){
+            alert('Please enter your contact info')
+            return
+        }
          if (confirmation_method == "email")
           {
             if (email_contact == "") {
@@ -1239,6 +1283,8 @@ if (timeElement.length > 0) {
         alert("Please select a confirmation method.");
         return;
         }
+
+        
         // last page email if country india
         email_last_page=$("#email_last_page").val();
 
@@ -1258,6 +1304,7 @@ if (timeElement.length > 0) {
         questions_dict.email_contact = email_contact,
         questions_dict.whatsapp_contact = whatsapp_contact
         questions_dict.whatsapp_contact2 = whatsapp_contact2
+        questions_dict.contact3 = contact3
 
     console.log(questions_list);
     $.ajax({
