@@ -296,6 +296,10 @@ def thank_you_page():
     questions_data=''
     try:
         questions_data=session['questions_data']
+        try:
+            payment_gateway = request.args.get('payment_gateway')
+        except:
+            payment_gateway = ''
 
         print("thankyou page")
         headers={
@@ -440,8 +444,10 @@ def thank_you_page():
                 other_gender = ''
         except Exception as e:
             print(e)
-
-
+        try:
+            data['payment_gateway'] = payment_gateway
+        except:
+            pass
         api_data=json.dumps(data)
         print("api_data in last page:",api_data)
         try:

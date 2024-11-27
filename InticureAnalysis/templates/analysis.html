@@ -191,7 +191,7 @@
                                                     <div class="mm-survery-content">
                                                         <div class="mm-survey-question ">
 
-                                                            <p  {#class="p1"#} style="font-family:Manrope ;font-weight:400;font-size: 15px;line-height: 30px;">{{question['question']}}</p>
+                                                            <p  {#class="p1"#} style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;line-height: 30px;">{{question['question']}}</p>
 
                                                         </div>
 
@@ -205,7 +205,7 @@
 
 
                                                             <input type="radio" id="radio0{{option['id']}}"  data-item="1" name="answer{{question.id}}" value="{{option['id']}}" />
-                                                            <label for="radio0{{option['id']}}" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p style="font-family:Manrope ;font-weight:400;font-size: 20px;">{{option['option']}}</p></label>
+                                                            <label for="radio0{{option['id']}}" style="font-family:Red Hat Display,Manrope ;font-weight:400;font-size: 18px;"><span></span><p style="font-family:Red Hat Display,Manrope ;font-weight:400;font-size: 20px;">{{option['option']}}</p></label>
 
 
                                                         <!-- </div> -->
@@ -213,7 +213,7 @@
                                                         {#<div class="mm-survey-item">#}
 
                                                             <input type="radio" id="radio0{{option['id']}}"  data-item="1" name="answer{{question.id}}" value="{{option['id']}}" />
-                                                            <label for="radio0{{option['id']}}" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p>{{option['option']}}</p></label>
+                                                            <label for="radio0{{option['id']}}" style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 18px;"><span></span><p>{{option['option']}}</p></label>
 
 
                                                         <!-- </div> -->
@@ -223,7 +223,7 @@
                                                         <div class="form-group">
                                                             <label class="form-label" ></label>
                                                             <div class="form-control-wrap">
-                                                                <input type="text" class="form-control" id="text{{question.id}}" {#id="text{{option['id']}}"#}  data-item="1" name="answer{{question.id}}" style="font-family:Manrope ;font-weight:400;font-size: 16px;" />
+                                                                <input type="text" class="form-control" id="text{{question.id}}" {#id="text{{option['id']}}"#}  data-item="1" name="answer{{question.id}}" style="font-family:Red Hat Display,Manrope ;font-weight:400;font-size: 16px;" />
                                                                 <label for="text{{question.id}}"><span></span><p></p></label>
                                                                 
                                                             </div>
@@ -235,7 +235,7 @@
                                                         {% elif question.answer_type == "checkbox" %}
                                                     
                                                             <input type="checkbox" {#class="custom-control-input"#} id="cb{{option['id']}}"  data-item="1" name="answer{{question.id}}" value="{{option['id']}}" />
-                                                            <label {#class="custom-control-label"#} for="cb{{option['id']}}" style="font-family:Manrope ;font-weight:400;font-size: 18px;line-height: 30px;"><span>{{option['option']}}</span></label>
+                                                            <label {#class="custom-control-label"#} for="cb{{option['id']}}" style="font-family:Red Hat Display,Manrope ;font-weight:400;font-size: 18px;line-height: 30px;"><span>{{option['option']}}</span></label>
                                                         
                                                         {% endif %}
                                                         {% endfor %}
@@ -249,7 +249,7 @@
                                                                 </label>
                                                                 <div class="form-control-wrap ">
                                                                     <div class="form-control-select">
-                                                                        <select class="form-control fs-18px fw-medium" id="drop{{question.id}}" name="answer{{question.id}}" style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                        <select class="form-control fs-18px fw-medium" id="drop{{question.id}}" name="answer{{question.id}}" style="font-family:Red Hat Display,Manrope ;font-weight:400;font-size: 15px;">
                                                                             <option value="">Select</option>
                                                                             {% for option in question['options'] %}
                                                                             <option value="{{option['id']}}">{{option['option']}}</option>
@@ -281,29 +281,29 @@
                                                                 <div class="card-inner content-center" style="margin: 0px;padding: 0px;">
                                                                 <div class="col-sm-6">
                                                                     <div class="nk-kyc-app-text mx-auto">
-                                                                        <label  style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                        <label  style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;">
                                                                             Do you have a gender preference for your doctor?
                                                                     (* We can't guarantee that you will always get your preference. But we will
                                                                     try our best to accomodate your request.)
                                                                         </label>
                                                                
                                                                 <input type="radio" id="male"  data-item="1" name="doc_gender" value="male" onchange="Timeslots()"/>
-                                                            <label for="male" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p>Male</p></label>
+                                                            <label for="male" style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 18px;"><span></span><p>Male</p></label>
                                                             <input type="radio" id="female"  data-item="1" name="doc_gender" value="female" onchange="Timeslots()"/>
-                                                            <label for="female" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p>Female</p></label>
+                                                            <label for="female" style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 18px;"><span></span><p>Female</p></label>
                                                             <input type="radio" id="either"  data-item="1" name="doc_gender" value="" onchange="Timeslots()"/>
-                                                            <label for="either" style="font-family:Manrope ;font-weight:400;font-size: 18px;"><span></span><p>Either</p></label>
+                                                            <label for="either" style="font-family:Red Hat Display,Manrope ;font-weight:400;font-size: 18px;"><span></span><p>Either</p></label>
                                                                
                                                             </div>
                                                                 <div class="form-group">
-                                                                    <label for="language" style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                    <label for="language" style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;">
                                                                         Do you have a language preference for your doctor?
                                                                         (* We can't guarantee that you will always get your preference. But we will
                                                                 try our best to accomodate your request.)
                                                                     </label>
                                                                     <div class="form-control-wrap ">
                                                                         <div class="form-control-select">
-                                                                            <select class="form-control fs-18px fw-medium" id="language" name="language" style="font-family:Manrope ;font-weight:400;font-size: 15px;" required onchange="Timeslots()">
+                                                                            <select class="form-control fs-18px fw-medium" id="language" name="language" style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;" required onchange="Timeslots()">
                                                                                 <option value="">Select</option>
                                                                                 {% for language in languages %}
                                                                                 <option value="{{language.language}}">{{language.language}}</option>
@@ -328,15 +328,15 @@
                                                             <div class="card">
                                                                 <!-- Responsive Changes -->
                                                                 <div class="card-inner content-center" style="margin: 0px;padding: 0px;">
-                                                                    <p style="font-family:Manrope ;font-weight:400;font-size: 15px;"> What is your preferred name?</p>
+                                                                    <p style="font-family:Red Hat Display, , Manrope ;font-weight:400;font-size: 15px;"> What is your preferred name?</p>
                                                                     <div class="row g-4">
 
                                                             <div class="col-sm-4">
 
                                                                 <div class="form-group">
-                                                                    <label class="form-label" style="font-family:Manrope ;font-weight:400;font-size: 15px;">First Name</label>
+                                                                    <label class="form-label" style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;">First Name</label>
                                                                     <div class="form-control-wrap">
-                                                                        <input type="text" class="form-control" id="first_name" name="first_name" style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                        <input type="text" class="form-control" id="first_name" name="first_name" style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;">
                                                                     </div>
                                                                 </div>
 
@@ -344,9 +344,9 @@
 
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
-                                                                    <label class="form-label" style="font-family:Manrope ;font-weight:400;font-size: 15px;">Last Name</label>
+                                                                    <label class="form-label" style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;">Last Name</label>
                                                                     <div class="form-control-wrap">
-                                                                        <input type="text" class="form-control" id="last_name" name="last_name" style="font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                        <input type="text" class="form-control" id="last_name" name="last_name" style="font-family:Red Hat Display , Manrope;font-weight:400;font-size: 15px;">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -355,13 +355,13 @@
                                                         <div class="row g-4" style="margin-top:20px ;">
                                                             <div class="col-sm-8">
                                                             <div class="form-group" style="margin-left: 5px ;margin-right: 5px ; margin-top: 20px;">
-                                                                <label class="form-label" style="font-family:Manrope ;font-weight:400;font-size: 15px;" for="message">
+                                                                <label class="form-label" style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;" for="message">
                                                                     This is your personal message to the doctor. Feel free to share any concerns you have or
                                                                     ask any questions. Our world class doctors and licensed therapists are always empathetic,
                                                                     polite and non judgemental. And remember all your consultations are confidential.
                                                                 </label>
                                                                 <div class="form-control-wrap">
-                                                                    <textarea class="form-control form-control-md" id="message" name="message" style="font-family:Manrope ;font-weight:400;font-size: 15px;"></textarea>
+                                                                    <textarea class="form-control form-control-md" id="message" name="message" style="font-family:Red Hat Display , Manrope;font-weight:400;font-size: 15px;"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -377,7 +377,7 @@
                                                 <div class="mm-survey-page" data-page="{{question_list_length+3}}" style="margin-left: 0px;margin-right: 30px;margin-top: 30px;padding: 0px;">
                                                     <div class="mm-survery-content">
                                                         <div class="mm-survey-question">
-                                                            <p style="font-family:Manrope ;font-weight:400;font-size: 18px;">Almost there! Select a timeslot that works for you</p>
+                                                            <p style="font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 18px;">Almost there! Select a timeslot that works for you</p>
                                                             
                                                         </div>
                                                      
@@ -386,14 +386,14 @@
                                                                     <div id="card-inner" class="card-inner content-center" style="display:flex;justify-content:between;">
                                                                         <div class="col-sm-6">
 
-                                                                            <p id="doctorMessage" style="margin-top:50px ;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                            <p id="doctorMessage" style="margin-top:50px ;font-family:Red Hat Display , Manrope;font-weight:400;font-size: 15px;">
                                                                                 Unfortunately a doctor that matches your language preference is currently unavailable. But here are the time slots for another excellent doctor.
                                                                             </p>
 
-                                                                            <p id="doctorgender" style="margin-top:50px ;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                            <p id="doctorgender" style="margin-top:50px ;font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;">
                                                                                 Unfortunately a doctor that matches your gender preference is currently unavailable. But here are the time slots for another excellent doctor.
                                                                             </p>
-                                                                            <p id="bothpreference" style="margin-top:50px ;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                            <p id="bothpreference" style="margin-top:50px ;font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;">
                                                                                 Unfortunately a doctor that matches your preferences is currently unavailable. But here are the time slots for another excellent doctor.
                                                                             </p>
 
@@ -401,7 +401,7 @@
                                                                                 {#<div class="g-4 align-center " id="time_box" >#}
                                                                                 <div class="g-4 " style="margin-top: 0px;" id="time_box" >
                                                                                     <div class="g m-auto">
-                                                                                        <p style="margin-top:100px ;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                                        <p style="margin-top:100px ;font-family:Red Hat Display , Manrope;font-weight:400;font-size: 15px;">
                                                                                             Available time slots will appear here
                                                                                         </p>
                                                                                     </div>
@@ -410,7 +410,7 @@
                                                                                 <!-- <div id="test"></div> -->
                                                                                 <table class="table custom-table" >
                                                                                     <thead >
-                                                                                        <tr id="t_head" class="text-center" style="color:black;font-family:Manrope ;font-weight:400;font-size: 15px;">
+                                                                                        <tr id="t_head" class="text-center" style="color:black;font-family:Red Hat Display, Manrope ;font-weight:400;font-size: 15px;">
                                                                                             <th></th>
                                                                                         </tr>
                                                                                     </thead>
@@ -441,7 +441,7 @@
                                                 <div class="mm-survey-page" data-page="{{question_list_length+4}}" style="margin-left: 0; margin-right: 30px; margin-top: 30px; padding: 0;">
     <div class="mm-survery-content">
         <div class="mm-survey-question">
-            <p style="font-family: Manrope; font-weight: 400; font-size: 18px;">
+            <p style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 18px;">
                 Please provide your details
             </p>
         </div>
@@ -451,7 +451,7 @@
                     <div class="row g-4">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                <label class="form-label" style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 15px;">
                                     What is your date of birth<span style="color: #D41060;">*</span>
                                 </label>
                                 <div class="form-control-wrap">
@@ -464,7 +464,7 @@
                     <div class="g" style="margin-top: 10px;">
                         <div class="custom-control custom-control-sm custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="guardian_agree" name="guardian_agree" required>
-                            <label class="custom-control-label" for="guardian_agree" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                            <label class="custom-control-label" for="guardian_agree" style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 15px;">
                                 I confirm that I have the permission of a guardian to proceed.
                             </label>
                         </div>
@@ -479,7 +479,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 
-                                <label class="form-label" id="whatsapp_label3" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                <label class="form-label" id="whatsapp_label3" style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 15px;">
                                     Please enter your contact number
                                 </label>
                                 <div class="form-control-wrap">
@@ -493,7 +493,7 @@
                     <div class="row g-4">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                <label class="form-label" style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 15px;">
                                     How would you like to receive the appointment confirmation?
                                 </label>
                                 <div class="form-control-wrap">
@@ -511,7 +511,7 @@
                     <div id="whatsapp_input" class="row g-4" style="display: none;">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="form-label" id="whatsapp_label1" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                <label class="form-label" id="whatsapp_label1" style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 15px;">
                                     What’s your WhatsApp number? We will be sending your doctor's appointment confirmations to this number.
                                 </label>
                                 
@@ -526,11 +526,11 @@
                     <div id="email_input" class="row g-4" style="display: none;">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label id="label_email" class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                <label id="label_email" class="form-label" style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 15px;">
                                     What’s your email address? We will be sending your doctor's appointment confirmations to this email.
-                                <p style="font-family:Manrope; font-size: 12px;line-height: 20px; font-weight: 400;">If you don’t see the confirmation email in your inbox, please check your spam or junk folder</p>
+                                <p style="font-family:Red Hat Display, Manrope; font-size: 12px;line-height: 20px; font-weight: 400;">If you don’t see the confirmation email in your inbox, please check your spam or junk folder</p>
                                 </label>
-                                <label id="label_email2" class="form-label" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                <label id="label_email2" class="form-label" style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 15px;">
                                     Please Enter your Email address to continue.
                                 </label>
                                 <div class="form-control-wrap">
@@ -544,7 +544,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 
-                                <label class="form-label" id="whatsapp_label2" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                <label class="form-label" id="whatsapp_label2" style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 15px;">
                                     Please enter your contact number ( preferably whatsapp )
                                 </label>
                                 <div class="form-control-wrap">
@@ -559,7 +559,7 @@
                         <div class="g" style="margin-top: 10px;">
                             <div class="custom-control custom-control-sm custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" style="background-color: #6A1B78;" id="agree_terms" name="agree_terms" required>
-                                <label class="custom-control-label" for="agree_terms" style="font-family: Manrope; font-weight: 400; font-size: 15px;">
+                                <label class="custom-control-label" for="agree_terms" style="font-family: Red Hat Display, Manrope; font-weight: 400; font-size: 15px;">
                                     I agree to the
                                     <a href="https://inticure.com/terms-conditions/">Terms & Conditions</a>,
                                     <a href="https://inticure.online/faq/">Refund policies</a>,
@@ -1255,10 +1255,16 @@ if (timeElement.length > 0) {
         var contact3 = $("#contact3").val();
         var location=document.getElementById("location").value;
         console.log(location);
-        console.log(contact3, location)
+        console.log(contact3)
+        console.log(whatsapp_contact2)
+        console.log(whatsapp_contact)
         if (location != 'India' && contact3 == ""){
             alert('Please enter your contact info')
             return
+        }
+        if (location != 'India' && contact3.includes('+')) {
+            alert("No need to enter your country code");
+            return;
         }
          if (confirmation_method == "email")
           {
@@ -1270,9 +1276,17 @@ if (timeElement.length > 0) {
                 alert("Please provide your WhatsApp number for confirmation.");
                 return;
             }
+            if (whatsapp_contact2.includes('+')) {
+                alert("No need to enter your country code");
+                return;
+            }
         } else if (confirmation_method == "whatsapp") {
             if (whatsapp_contact == "") {
                 alert("Please provide your WhatsApp number for confirmation.");
+                return;
+            }
+            if (whatsapp_contact.includes('+')) {
+                alert("Please Enter only your phone number, No need to enter your country code");
                 return;
             }
             else if (email_contact == ""){
@@ -1544,7 +1558,7 @@ console.log('data analysis')
     <style>
         .p1{
             color: rgba(0, 0, 0, 0.89);
-            font-family : "SofiaProWeb", Arial, Helvetica, sans-serif;
+            font-family : "Red Hat Display", ", Manrope", Arial, Helvetica, sans-serif;
             font-weight: 600;
             font-size: 3rem;
             line-height: 1.17;
